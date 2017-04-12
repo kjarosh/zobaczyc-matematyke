@@ -90,7 +90,7 @@ class Theme{
 		
 		<footer>
 			<div class="copyright-notice">
-				Copyright &copy;2015,2016 Kamil Jarosz, wszystkie prawa zastrzeżone.
+				Copyright &copy;2015,2016 Kamil Jarosz, wszystkie prawa zastrzeżone. Rev 2.
 			</div>
 		</footer>
 	</body>
