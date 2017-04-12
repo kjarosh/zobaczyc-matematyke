@@ -1,0 +1,9 @@
+================================================================================
+
+Plik `index.php` jest plikiem wejœciowym. Parametr `page` prze³¹cza na
+odpowiedni¹ stronê -- przyjmuje on wartoœci od `0` do `9`. Strona `0` jest
+stron¹ g³ówn¹ i spisem treœci.
+
+Licencje oprogramowañ znajduj¹ siê w folderze `license`.
+
+~Kamil Jarosz
