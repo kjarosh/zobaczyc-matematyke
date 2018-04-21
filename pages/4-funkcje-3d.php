@@ -91,7 +91,7 @@ class Page4{
 	<h3>Sposoby przedstawiania funkcji zespolonej</h3>
 	
 	<p>
-		Pierwszym już poznanym przez nas sposobem są tak zwane mapy zespolone.
+		Pierwszym sposobem są tak zwane mapy zespolone.
 		Są to dwa rysunki jakiejś figury, najczęściej kolorowej wraz z wyznaczonymi
 		liniami. Pierwsza jest figurą oryginalną, druga natomiast figurą poddaną przekształceniu (funkcji).
 	</p>
@@ -101,12 +101,13 @@ class Page4{
 <div class="content">
 	
 	<p>
-		Drugim sposobem jest technika kolorowania dziedziny. Mając płaszczyznę zespoloną
-		każdy punkt kolorujemy zależnie od wartości tej funkcji w punkcie. Najczęściej bierze
-		się pod uwagę argument i moduł wartości.
+		Drugim sposobem jest podzielenie funkcji zespolonej $f$ na dwie funkcje dwóch zmiennych.
+		Każda funkcja zespolona "pobiera", a potem "wyrzuca" dwie liczby rzeczywiste. Gdyby pierwszą funkcję $f_r$
+		zdefiniować jako część rzeczywistą funkcji $f$, a drugą $f_i$ jako część urojoną funkcji $f$, otrzymamy
+		dwie funkcje pobierające po dwie liczby rzeczywiste, a wyrzucające tylko jedną:
 		
-		Technika ta jednak jest bardzo skomplikowana, szczególnie dla początkujących osób,
-		które dopiero odkrywają analizę zespoloną.
+		$$f_r(x,y)=\Re f(x+yi)$$
+		$$f_i(x,y)=\Im f(x+yi)$$
 	</p>
 	
 </div>
@@ -114,13 +115,12 @@ class Page4{
 <div class="content">
 	
 	<p>
-		Trzecim sposobem jest podzielenie funkcji zespolonej $f$ na dwie funkcje dwóch zmiennych.
-		Każda funkcja zespolona "pobiera", a potem "wyrzuca" dwie liczby rzeczywiste. Gdyby pierwszą funkcję $f_r$
-		zdefiniować jako część rzeczywistą funkcji $f$, a drugą $f_i$ jako część urojoną funkcji $f$, otrzymamy
-		dwie funkcje pobierające po dwie liczby rzeczywiste, a wyrzucające tylko jedną:
+		Trzecim sposobem jest technika kolorowania dziedziny. Mając płaszczyznę zespoloną
+		każdy punkt kolorujemy zależnie od wartości tej funkcji w punkcie. Najczęściej bierze
+		się pod uwagę argument i moduł wartości.
 		
-		$$f_r(x,y)=\Re f(x+yi)$$
-		$$f_i(x,y)=\Im f(x+yi)$$
+		Technika ta jednak jest bardzo skomplikowana, szczególnie dla początkujących osób,
+		które dopiero odkrywają analizę zespoloną.
 	</p>
 	
 </div>

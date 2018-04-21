@@ -44,7 +44,7 @@ class Page3{
 		${\color{blue}{\varepsilon}}>0$ prawie wszystkie wyrazy ciągu $w_n$
 		są odległe od ${\color{red}{g}}$ o mniej niż ${\color{blue}{\varepsilon}}$, tzn:
 		
-		$$|w_n-{\color{red}{g}}| \lt {\color{blue}{\varepsilon}}$$
+		$$|\,w_n-{\color{red}{g}}\,| \lt {\color{blue}{\varepsilon}}$$
 	</blockquote>
 	
 	<p>
@@ -86,7 +86,7 @@ class Page3{
 		Podobnie z ciągami ${\color{orange}{m_n}}$ i ${\color{red}{k_n}}$: jeśli są one zbieżne do liczb ${\color{orange}{m}}$
 		i ${\color{red}{k}}$, to ciąg $w_n$ też jest zbieżny do granicy
 		
-		$$g={\color{orange}{m}}\big(\cos({\color{red}{k}})+i\sin({\color{red}{k}})\big)$$
+		$$g={\color{orange}{m}}\big(\!\cos({\color{red}{k}})+i\sin({\color{red}{k}})\big)$$
 	</p>
 </div>
 

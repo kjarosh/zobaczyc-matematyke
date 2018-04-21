@@ -155,6 +155,10 @@ class Page1{
 		Strona ta jest pracą biorącą udział w konkursie pod tytułem
 		<a href="http://zobaczycmatematyke.pl/">"Zobaczyć matematykę"</a>.
 	</p>
+	
+	<p><i>
+		Jest to wersja 2 oryginalnej strony z poprawionymi błędami.
+	</i></p>
 </div>
 
 <?php
