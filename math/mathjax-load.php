@@ -15,4 +15,5 @@ MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 });
 </script>
 
-<script type="application/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+
