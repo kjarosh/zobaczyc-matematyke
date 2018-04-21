@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Header</title>
+	<script src="../../jslib/jquery.min.js"></script>
+	<script src="../../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<link rel="stylesheet" href="../../jslib/mathbox2/mathbox.min.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<style>
+	body {
+		/*cursor: default !important;*/
+		pointer-events: none;
+	}
+	
+	canvas {
+		width: 100% !important;
+		height: 100% !important;
+		margin: 0px;
+		padding: 0px;
+	}
+	</style>
+</head>
+<body>
+<script type="application/javascript" src="../config.js"></script>
+<script type="application/javascript" src="../math-lib.js"></script>
+<script>
+var mathbox = mathBox({
+	plugins: ['core', 'controls', 'cursor'],
+	controls: {
+		klass: THREE.OrbitControls,
+		parameters: {
+			//noZoom: true
+		}
+	},
+	camera: {
+		fov: 30
+	},
+});
+three = mathbox.three;
+
+//three.camera.position.set(-1, 1, 6);
+three.renderer.setClearColor(new THREE.Color(0x000000), 1.0);
+
+var view = mathbox.set('focus', Config.iframe ? 0.7 : 4).cartesian({
+	range: [[-5, 5], [-5, 5], [-5, 5]],
+}).transform({
+	rotation: [Math.PI/2, 0, 0],
+});
+
+var camera = view.camera({
+	proxy: true,
+	position: [0, 0, 3],
+	lookAt: [0, 0, 0],
+}, {
+	position: function(t){
+		var scale = Config.iframe ? 0.5 : 1;
+		
+		var rot = t/15;
+		
+		return [scale*2*Math.cos(rot), scale*(Math.sin(t/5)/5 + 1), scale*2*Math.sin(rot)];
+	},
+});
+
+function wave(arg){
+	return (Math.sin(arg/6)/3+1.1)*(Math.sin(4*arg)/2+1)/10 + Math.sin(arg/10)/6 + 1/4;
+}
+
+var emitter = function(emit, x, y, i, j, time){
+	var wavex = wave(x/4-2*time);
+	var wavey = wave(y/4-2*time);
+	
+	emit(x, y, wavex+wavey);
+	emit(x, y, -(wavex+wavey));
+};
+
+var resolution = 16;
+
+function colorFactory(type){
+	var translate = 0;
+	
+	if(type == 'bp'){
+		translate = 0.7;
+	}else if(type == 'sp'){
+		translate = 0.5;
+	}else if(type == 'l'){
+		translate = 0.6;
+	}
+	
+	return function(t){
+		function pad(str){
+			if(str.length < 2){
+				return '0' + str;
+			}
+			
+			return str;
+		}
+		
+		//var color = ColorConvert.HSVtoRGB(330/360, 1, -Math.sin(t/6)/4 + translate);
+		var color = ColorConvert.HSVtoRGB(204/360, 1, -Math.sin(t/6)/5 + translate);
+		var ret = '#' +
+			pad((Math.floor(color[0]*255)).toString(16)) +
+			pad((Math.floor(color[1]*255)).toString(16)) +
+			pad((Math.floor(color[2]*255)).toString(16));
+		
+		return ret;
+	};
+}
+
+view.area({
+	width: 4*resolution + 1,
+	height: 4*resolution + 1,
+	expr: emitter,
+	items: 2,
+}).point({
+	//color: Config.colors.pink,
+	size: 4,
+}, {
+	color: colorFactory('sp'),
+});
+
+view.area({
+	width: resolution + 1,
+	height: resolution + 1,
+	expr: emitter,
+	items: 2,
+}).point({
+	//color: Config.colors.pink,
+	size: 8,
+}, {
+	color: colorFactory('bp'),
+}).line({
+	color: Config.colors.pink,
+}, {
+	color: colorFactory('l'),
+}).transpose({
+	order: 'yxz',
+}).line({
+	color: Config.colors.pink,
+}, {
+	color: colorFactory('l'),
+});
+</script>
+
+</body>
+</html>
