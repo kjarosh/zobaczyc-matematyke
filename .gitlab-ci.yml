@@ -1,0 +1,17 @@
+image: debian
+
+before_script:
+  - (apt-get update) || true
+  - (yes | apt-get install lftp) || true
+
+deploy:
+  stage: deploy
+  when: manual
+  script:
+    - rm -rf .git
+    - (rm .gitignore .gitlab-ci.yml) || true
+    - lftp -u $USERNAME,$PASSWORD -e "set ssl:verify-certificate false; mirror -v --log=lftp.log -R --only-newer . htdocs" $HOST 
+  artifacts:
+    when: always
+    paths:
+      - lftp.log
