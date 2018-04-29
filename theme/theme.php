@@ -39,12 +39,16 @@ class Theme{
 				<link rel="stylesheet/less" type="text/css" href="css/iframe-ie.less" />
 			<![endif]-->
 			
-			<script type="application/javascript" src="jslib/less.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.2/less.min.js"></script>
 		<?php /* end LESS */ ?>
 		
 		<?php /* Libraries */ ?>
-			<script src="jslib/jquery.min.js"></script>
-			<script src="jslib/three.min.js"></script>
+			<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+				integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+				crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"
+				integrity="sha256-wdpU7RX1XIEGCf6v5hatJyV4/DNtLbidb4LmzN8w+Jo="
+				crossorigin="anonymous"></script>
 			
 			<script src="js/visibility.js"></script>
 		<?php /* end Libraries */ ?>
