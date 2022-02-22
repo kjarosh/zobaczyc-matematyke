@@ -24,17 +24,17 @@ var inverseGap = 0.0005;
 		range: [[-100, 100], [-100, 100], [-100, 100]],
 		scale: [50, 50, 50],
 	});
-	
+
 	var elementsNum = 50;
 	var inversePace = 6;
-	
+
 	present.area({
 		id: 'planeColors',
 		width: gridRange*gridMultiplier + +gridOdd,
 		height: gridRange*gridMultiplier + +gridOdd,
 		expr: function(emit, x, y, i, j, time){
 			var a = 1;
-			
+
 			if(
 				Math.abs(x) > gridRange - gridColorMargin ||
 				Math.abs(y) > gridRange - gridColorMargin
@@ -44,7 +44,7 @@ var inverseGap = 0.0005;
 				var max = Math.max(Math.abs(y), Math.abs(x));
 				a = (Math.cos(2*Math.PI*(max-a)/b/2)+1)/2;
 			}
-			
+
 			emit(gridColor[0]/255, gridColor[1]/255, gridColor[2]/255, a);
 		},
 		rangeX: [-gridRange, gridRange],
@@ -53,7 +53,7 @@ var inverseGap = 0.0005;
 		items: 1,
 		live: false,
 	});
-	
+
 	present.area({
 		id: 'coloredPlaneColorsLeft',
 		width: coloredPlaneDensityMinor,
@@ -61,7 +61,7 @@ var inverseGap = 0.0005;
 		expr: function(emit, x, y, i, j, time){
 			var h = (y + coloredPlaneRange)/(3*coloredPlaneRange);
 			var rgb = ColorConvert.HSVtoRGB(h, 1, 1);
-			
+
 			emit(rgb[0], rgb[1], rgb[2], 1);
 		},
 		rangeX: [-coloredPlaneRange, 0],
@@ -70,7 +70,7 @@ var inverseGap = 0.0005;
 		items: 1,
 		live: false,
 	});
-	
+
 	present.area({
 		id: 'coloredPlaneColorsRight',
 		width: coloredPlaneDensityMinor,
@@ -78,7 +78,7 @@ var inverseGap = 0.0005;
 		expr: function(emit, x, y, i, j, time){
 			var h = (y + coloredPlaneRange)/(3*coloredPlaneRange);
 			var rgb = ColorConvert.HSVtoRGB(h, 1, 1);
-			
+
 			emit(rgb[0], rgb[1], rgb[2], 1);
 		},
 		rangeX: [0, coloredPlaneRange],
@@ -87,15 +87,15 @@ var inverseGap = 0.0005;
 		items: 1,
 		live: false,
 	});
-	
+
 	var slide = present.slide({
 		late: 42,
 	}).reveal({
 		duration: 1,
 	});
-	
+
 	scriptCamera(slide);
-	
+
 	// SLIDE 1: show plane
 	var stereo = slide
 		// complex plane
@@ -124,7 +124,7 @@ var inverseGap = 0.0005;
 			colors: '#planeColors',
 			zBias: -4,
 		})
-			
+
 		// sphere
 		.area({
 			id: 'sphere-points',
@@ -140,7 +140,7 @@ var inverseGap = 0.0005;
 			items: 1,
 			live: false,
 		})
-		
+
 		// correcting transform
 		.transform({
 			rotation: [Math.PI/2, 0, 0],
@@ -166,7 +166,7 @@ var inverseGap = 0.0005;
 							id: 'mobius-transform-inverse2',
 							rotation: [0, 0, 0],
 						});
-	
+
 	// PLANE PROJECTION
 	stereo
 		.area({
@@ -174,7 +174,7 @@ var inverseGap = 0.0005;
 			height: coloredPlaneDensityMajor,
 			expr: function(emit, x, y, i, j, time){
 				var coord = RiemannSphere.xyToRiemann(x, y);
-				
+
 				emit(inverseGap+coord[0], coord[1], coord[2]-1);
 			},
 			rangeX: [0, coloredPlaneRange],
@@ -193,7 +193,7 @@ var inverseGap = 0.0005;
 			height: coloredPlaneDensityMajor,
 			expr: function(emit, x, y, i, j, time){
 				var coord = RiemannSphere.xyToRiemann(x, y);
-				
+
 				emit(-inverseGap+coord[0], coord[1], coord[2]-1);
 			},
 			rangeX: [-coloredPlaneRange, 0],
@@ -207,22 +207,22 @@ var inverseGap = 0.0005;
 			shaded: true,
 			width: 5,
 		});
-	
+
 	var coloredPlaneGridDensity = 9;
 	var coloredPlaneGridLineDetailMajor = 150;
 	var coloredPlaneGridLineDetailMinor = 32;
 	var coloredPlaneGridLineWidth = 8;
-	
+
 	for(var i = 0; i < coloredPlaneGridDensity; ++i){
 		plotVLine(stereo, i, 8);
 		plotHLines(stereo, i, 8);
 	}
-	
+
 	function plotVLine(node, i, bias){
 		var coord = (i/(coloredPlaneGridDensity-1))*2*coloredPlaneRange-coloredPlaneRange;
-		
+
 		node.interval({
-			length: coloredPlaneGridLineDetailMajor,
+			width: coloredPlaneGridLineDetailMajor,
 			range: [-coloredPlaneRange, coloredPlaneRange],
 			expr: function(emit, x, x0, t){
 				var c = RiemannSphere.xyToRiemann(coord- inverseGap, x);
@@ -235,12 +235,12 @@ var inverseGap = 0.0005;
 			zBias: bias,
 		});
 	}
-	
+
 	function plotHLines(node, i, bias){
 		var coord = (i/(coloredPlaneGridDensity-1))*2*coloredPlaneRange-coloredPlaneRange;
-		
+
 		node.interval({
-			length: coloredPlaneGridLineDetailMinor,
+      width: coloredPlaneGridLineDetailMinor,
 			range: [-coloredPlaneRange, 0],
 			expr: function(emit, x, x0, t){
 				var c = RiemannSphere.xyToRiemann(x - inverseGap, coord);
@@ -252,9 +252,9 @@ var inverseGap = 0.0005;
 			color: Config.colors.black,
 			zBias: bias,
 		});
-		
+
 		node.interval({
-			length: coloredPlaneGridLineDetailMinor,
+      width: coloredPlaneGridLineDetailMinor,
 			range: [0, coloredPlaneRange],
 			expr: function(emit, x, x0, t){
 				var c = RiemannSphere.xyToRiemann(x + inverseGap, coord);
@@ -267,46 +267,46 @@ var inverseGap = 0.0005;
 			zBias: bias,
 		});
 	}
-	
+
 	// ANIMATEEEEEE !!!!!!!!!!!!!!!!!!!!! ==================================================================================================
-	
+
 	slide
 		.step({
 			target: '#mobius-transform-move-scale-rotate',
 			pace: 1,
 			script: [
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// translation
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [1, 1, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [-1, 1, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// scaling
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1.5, 1.5, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [.5, .5, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// rotation
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 1] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, -2] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// rotation & scale
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [.4, .4, 0], rotation: [0, 0, 3] },
 				{ position: [0, 0, 0], scale: [1.1, 1.1, 0], rotation: [0, 0, -1] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// inversion
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// multiple transforms
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [.5, .5, 0], rotation: [0, 0, 5] },
@@ -314,9 +314,9 @@ var inverseGap = 0.0005;
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 			]
 		});
-	
+
 	dumbSlides(present, 4*4);
-		
+
 	present.slide({
 		late: 25
 	})
@@ -331,12 +331,12 @@ var inverseGap = 0.0005;
 				{ rotation: [0, 0, 0] },
 			]
 		});
-	
+
 	dumbSlides(present, 4*2 - 1);
-	
+
 	var squareRot = null;
 	var squareInverse = null;
-	
+
 	// SPHERE PROJECTION
 	var slide2 = present.slide({
 		late: 17
@@ -357,7 +357,7 @@ var inverseGap = 0.0005;
 			height: coloredPlaneDensityMajor,
 			expr: function(emit, x, y, i, j, time){
 				var coord = RiemannSphere.xyToRiemann(x, y);
-				
+
 				emit(inverseGap+coord[0], coord[1], coord[2]-1);
 			},
 			rangeX: [0, coloredPlaneRange],
@@ -372,13 +372,13 @@ var inverseGap = 0.0005;
 			width: 5,
 			zBias: 11,
 		})
-		
+
 		.area({
 			width: coloredPlaneDensityMinor,
 			height: coloredPlaneDensityMajor,
 			expr: function(emit, x, y, i, j, time){
 				var coord = RiemannSphere.xyToRiemann(x, y);
-				
+
 				emit(-inverseGap+coord[0], coord[1], coord[2]-1);
 			},
 			rangeX: [-coloredPlaneRange, 0],
@@ -393,7 +393,7 @@ var inverseGap = 0.0005;
 			width: 5,
 			zBias: 11,
 		})
-		
+
 		// sphere
 		.area({
 			width: riemannGridRange*gridMultiplier + +gridOdd,
@@ -408,7 +408,7 @@ var inverseGap = 0.0005;
 			items: 1,
 			live: false,
 		})
-		
+
 		// sphere surface
 		.surface({
 			shaded: false,
@@ -417,7 +417,7 @@ var inverseGap = 0.0005;
 			zBias: 9,
 			opacity: 0.7,
 		})
-		
+
 		// sphere lines
 		.line({
 			color: Config.colors.gray,
@@ -431,12 +431,12 @@ var inverseGap = 0.0005;
 			zBias: 10,
 			width: linesWidth,
 		});;
-	
+
 	for(var i = 0; i < coloredPlaneGridDensity; ++i){
 		plotVLine(slide2, i, 12);
 		plotHLines(slide2, i, 12);
 	}
-	
+
 	slide2
 		.step({
 			target: '#sphere-move-scale-rotate',
@@ -444,19 +444,19 @@ var inverseGap = 0.0005;
 			script: [
 				// show sphere
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere translation
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
 				{ position: [-1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [-1, -1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere scaling
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 2], rotation: [0, 0, 0] },
 				{ position: [0, 0, 1], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere rotation
 				{ position: [0, 0, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], rotation: [0, 0, -2] },
@@ -470,25 +470,25 @@ var inverseGap = 0.0005;
 			script: [
 				// show sphere
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere translation
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [-1, -1, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [-1, 1, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere scaling
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [2, 2, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1.5, 1.5, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere rotation
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 2] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, -1] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
-				
+
 				// sphere inversion
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
@@ -496,9 +496,9 @@ var inverseGap = 0.0005;
 				{ position: [0, 0, 0], scale: [1, 1, 0], rotation: [0, 0, 0] },
 			]
 		});
-	
+
 	dumbSlides(present, 12);
-	
+
 	present.slide({
 		late: 4,
 	})
@@ -513,7 +513,7 @@ var inverseGap = 0.0005;
 				{ rotation: [0, 0, 0] },
 			]
 		})
-		
+
 		.step({
 			target: '#sphere-move-scale-rotate3',
 			pace: inversePace,

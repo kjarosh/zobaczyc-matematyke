@@ -14,6 +14,7 @@ import {CachedSrcDirective} from './directives/cached-src.directive';
 import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.component';
 import { P4Func3dComponent } from './pages/p4-func3d/p4-func3d.component';
 import { P5LimitsDerivativeComponent } from './pages/p5-limits-derivative/p5-limits-derivative.component';
+import { P6MobiusComponent } from './pages/p6-mobius/p6-mobius.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { P5LimitsDerivativeComponent } from './pages/p5-limits-derivative/p5-lim
     P3SeqSphereComponent,
     P4Func3dComponent,
     P5LimitsDerivativeComponent,
+    P6MobiusComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { P5LimitsDerivativeComponent } from './pages/p5-limits-derivative/p5-lim
     P3SeqSphereComponent,
     P4Func3dComponent,
     P5LimitsDerivativeComponent,
+    P6MobiusComponent,
   ],
 })
 export class AppModule {
