@@ -11,6 +11,7 @@ import {P4Func3dComponent} from './pages/p4-func3d/p4-func3d.component';
 import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limits-derivative.component';
 import {P6MobiusComponent} from './pages/p6-mobius/p6-mobius.component';
 import {P7TaylorSeriesComponent} from './pages/p7-taylor-series/p7-taylor-series.component';
+import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/p8-analytic-continuation.component';
 
 const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [0, P0TocComponent],
@@ -21,6 +22,7 @@ const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [5, P5LimitsDerivativeComponent],
   [6, P6MobiusComponent],
   [7, P7TaylorSeriesComponent],
+  [8, P8AnalyticContinuationComponent],
 ]);
 
 @Component({

@@ -12,10 +12,11 @@ import {PageHostDirective} from './directives/page-host.directive';
 import {HeaderComponent} from './header/header.component';
 import {CachedSrcDirective} from './directives/cached-src.directive';
 import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.component';
-import { P4Func3dComponent } from './pages/p4-func3d/p4-func3d.component';
-import { P5LimitsDerivativeComponent } from './pages/p5-limits-derivative/p5-limits-derivative.component';
-import { P6MobiusComponent } from './pages/p6-mobius/p6-mobius.component';
-import { P7TaylorSeriesComponent } from './pages/p7-taylor-series/p7-taylor-series.component';
+import {P4Func3dComponent} from './pages/p4-func3d/p4-func3d.component';
+import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limits-derivative.component';
+import {P6MobiusComponent} from './pages/p6-mobius/p6-mobius.component';
+import {P7TaylorSeriesComponent} from './pages/p7-taylor-series/p7-taylor-series.component';
+import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/p8-analytic-continuation.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { P7TaylorSeriesComponent } from './pages/p7-taylor-series/p7-taylor-seri
     P5LimitsDerivativeComponent,
     P6MobiusComponent,
     P7TaylorSeriesComponent,
+    P8AnalyticContinuationComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import { P7TaylorSeriesComponent } from './pages/p7-taylor-series/p7-taylor-seri
     P5LimitsDerivativeComponent,
     P6MobiusComponent,
     P7TaylorSeriesComponent,
+    P8AnalyticContinuationComponent,
   ],
 })
 export class AppModule {
