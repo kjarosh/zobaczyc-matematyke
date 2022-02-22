@@ -1,15 +1,15 @@
 (function complexDivision(idPrefix){
 	var A = [Math.PI/3, 1.5];
 	var B = [Math.PI/8, 2];
-	
+
 	var colorA = Config.colors.green;
 	var colorB = Config.colors.orange;
-	
+
 	present = presentation.cartesian({
 		range: [[-0.5, 2.5], [-0.5, 2.5], [-5,5]],
 		scale: [1, 1, 1],
 	});
-	
+
 	// slide 2: show A and B ====================================================================
 	present.slide({
 		late: 3
@@ -28,11 +28,11 @@
 				width: 3,
 				detail: 100
 			}).grid({
-				width: 1,  
+				width: 1,
 				divideX: 5,
 				divideY: 5,
 			})
-			
+
 			.transform({
 				rotation: [0, Math.PI, Math.PI/2]
 			}).polar()
@@ -41,7 +41,7 @@
 					id: idPrefix + 'A',
 					data: A,
 					channels: 2,
-					length: 1,
+          width: 1,
 				}).point({
 					size: 12,
 					color: colorA
@@ -57,12 +57,12 @@
 					depth: .5,
 					zIndex: 1,
 				})
-				
+
 				.array({
 					id: idPrefix + 'B',
 					data: B,
 					channels: 2,
-					length: 1,
+          width: 1,
 				}).point({
 					size: 12,
 					color: colorB
@@ -79,11 +79,11 @@
 					depth: .5,
 					zIndex: 1,
 				})
-				
+
 				.array({
 					data: [0, 1],
 					channels: 2,
-					length: 1,
+          width: 1,
 				}).point({
 					size: 12,
 					color: Config.colors.gray
@@ -102,7 +102,7 @@
 			.end()
 		.end()
 		.end();
-	
+
 	present.slide({
 		late: 2
 	})
@@ -118,7 +118,7 @@
 				.array({
 					id: idPrefix + 'triangleData',
 					channels: 2,
-					length: 4,
+          width: 4,
 					data: [
 						0, 0,
 						B[0], B[1],
@@ -132,7 +132,7 @@
 					closed: true,
 					opacity: 0.5,
 				})
-				
+
 				.step({
 					target: '#triangleTransform2',
 					pace: 3,
@@ -146,7 +146,7 @@
 			.end()
 		.end()
 		.end();
-	
+
 	present.slide().reveal({
 		duration: 1,
 		delayEnter: 3,
@@ -156,7 +156,7 @@
 		}).polar()
 			.array({
 				channels: 2,
-				length: 1,
+        width: 1,
 				data: [
 					A[0]-B[0], A[1]/B[1],
 				]
@@ -177,7 +177,7 @@
 			})
 		.end()
 	.end();
-	
+
 	present.slide().reveal({
 		duration: 1,
 		delayEnter: 3,
@@ -187,7 +187,7 @@
 		}).polar()
 			.array({
 				channels: 2,
-				length: 1,
+        width: 1,
 				data: [
 					-B[0], 1/B[1],
 				]

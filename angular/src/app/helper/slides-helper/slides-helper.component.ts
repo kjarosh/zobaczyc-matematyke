@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 export interface Slide {
   content: string;
@@ -24,7 +23,7 @@ export class SlidesHelperComponent implements OnInit {
 
   slideNo = 0;
 
-  constructor(protected sanitizer: DomSanitizer) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -51,10 +50,6 @@ export class SlidesHelperComponent implements OnInit {
 
   play() {
     this.playing = true;
-  }
-
-  getIframeSrc(): SafeUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.src);
   }
 
   slideBack() {

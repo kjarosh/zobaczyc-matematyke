@@ -7,11 +7,11 @@
       W niektórych prezentacjach możesz poruszać kamerą za pomocą myszy.
     </span>
   </div>
-	<iframe *ngIf="playing" class="mathbox present-canvas" [src]="getIframeSrc()"></iframe>
+	<iframe *ngIf="playing" class="mathbox present-canvas" [cachedSrc]="src"></iframe>
 
 	<div class="slide-text">
 		<h4>{{ title }}</h4>
-		<div class="slide-number">{{ slideNo + 1 }}/{{ slides.length }}</div>
+		<div class="slide-number">{{ slideNo + 1 }}/{{ slides?.length }}</div>
 
     <ng-container *ngFor="let slide of slides; let i = index">
       <div class="slide" [hidden]="slideNo !== i " [innerHTML]="slide.content"></div>

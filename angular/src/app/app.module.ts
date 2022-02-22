@@ -10,6 +10,7 @@ import {P2IntroComponent} from './pages/p2-intro/p2-intro.component';
 import {SlidesHelperComponent} from './helper/slides-helper/slides-helper.component';
 import {PageHostDirective} from './directives/page-host.directive';
 import { HeaderComponent } from './header/header.component';
+import { CachedSrcDirective } from './directives/cached-src.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
     SlidesHelperComponent,
     PageHostDirective,
     HeaderComponent,
+    CachedSrcDirective,
   ],
   imports: [
     BrowserModule,
