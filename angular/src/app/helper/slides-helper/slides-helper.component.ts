@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 export interface Slide {
   content: string;
@@ -13,16 +13,17 @@ export class SlidesHelperComponent implements OnInit {
   @Input()
   src: any;
 
-  iframeSrc: string;
-
   @Input()
   title: string;
 
   @Input()
   slides: Array<Slide>;
 
-  playing = false;
+  @ViewChild('iframe', {static: false})
+  iframe: ElementRef;
 
+  iframeSrc: string;
+  playing = false;
   slideNo = 0;
 
   constructor() {
@@ -58,6 +59,7 @@ export class SlidesHelperComponent implements OnInit {
   slideBack() {
     if (this.slideNo > 0) {
       this.slideNo--;
+      this.iframe.nativeElement.contentWindow.Config.prevSlide();
     }
   }
 
@@ -69,6 +71,7 @@ export class SlidesHelperComponent implements OnInit {
   slideNext() {
     if (this.slideNo + 1 < this.slides.length) {
       this.slideNo++;
+      this.iframe.nativeElement.contentWindow.Config.nextSlide();
     }
   }
 }

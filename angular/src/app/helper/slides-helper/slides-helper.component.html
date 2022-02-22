@@ -7,7 +7,10 @@
       W niektórych prezentacjach możesz poruszać kamerą za pomocą myszy.
     </span>
   </div>
-	<iframe *ngIf="playing" class="mathbox present-canvas" [cachedSrc]="iframeSrc"></iframe>
+	<iframe #iframe
+          *ngIf="playing"
+          class="mathbox present-canvas"
+          [cachedSrc]="iframeSrc"></iframe>
 
 	<div class="slide-text">
 		<h4>{{ title }}</h4>
