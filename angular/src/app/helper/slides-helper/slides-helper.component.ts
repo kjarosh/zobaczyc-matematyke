@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 export interface Slide {
@@ -20,39 +20,14 @@ export class SlidesHelperComponent implements OnInit {
   @Input()
   slides: Array<Slide>;
 
-  // @ViewChild('iframe', {static: true})
-  // iframe: any;
-
   playing = false;
+
+  slideNo = 0;
 
   constructor(protected sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
-    // const iframe = this.iframe;
-    // const that = this;
-    // iframe.onload = () => {
-    //   const innerDoc = iframe.contentWindow.document;
-    //   // $(innerDoc).ready(function() {
-    //   innerDoc.querySelector('div#play').onclick = function() {
-    //     let src = iframe.src;
-    //     let data = iframe.getAttribute('data-src');
-    //
-    //     // compare only ending
-    //     if (data.length > src.length) {
-    //       data = data.substring(data.length - src.length, data.length);
-    //     } else {
-    //       src = src.substring(src.length - data.length, src.length);
-    //     }
-    //
-    //     // prevent reloading
-    //     if (src !== data) {
-    //       iframe.src = iframe.getAttribute('data-src');
-    //
-    //       that.setupLoadChecker(iframe);
-    //     }
-    //   };
-    // };
   }
 
   setupLoadChecker(iframe) {
@@ -80,5 +55,17 @@ export class SlidesHelperComponent implements OnInit {
 
   getIframeSrc(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.src);
+  }
+
+  slideBack() {
+    this.slideNo--;
+  }
+
+  slideReload() {
+
+  }
+
+  slideNext() {
+    this.slideNo++;
   }
 }

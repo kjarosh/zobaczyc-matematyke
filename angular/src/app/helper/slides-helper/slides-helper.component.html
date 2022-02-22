@@ -1,98 +1,33 @@
 <div class="present">
-<!--	<?php if(isset($_GET['load'])): ?>-->
-<!--		<link rel="stylesheet/less" type="text/css" href="../../css/main.less" />-->
-<!--		<script type="application/javascript" src="../../jslib/less.min.js"></script>-->
-
-<!--		<?php include __DIR__ . '/../math/mathjax-load.php'; ?>-->
-<!--		<?php include __DIR__ . '/../math/mathjax-postload.php'; ?>-->
-
-<!--		<script src="../../jslib/jquery.min.js"></script>-->
-
-<!--		<script src="../../js/iframe.js"></script>-->
-<!--		<script src="../../js/main.js"></script>-->
-<!--	<?php endif; ?>-->
-
   <div *ngIf="!playing" class="present-canvas not-playing">
     <div id="play" (click)="play()"></div>
-    <span>Aby odtworzyć animację naciśnij przycisk powyżej. Do zmiany slajdów
-		używaj strzałek. W niektórych prezentacjach możesz poruszać kamerą za pomocą myszy.</span>
+    <span>
+      Aby odtworzyć animację naciśnij przycisk powyżej.
+      Do zmiany slajdów używaj strzałek.
+      W niektórych prezentacjach możesz poruszać kamerą za pomocą myszy.
+    </span>
   </div>
-	<iframe *ngIf="playing" class="mathbox present-canvas" #iframe [src]="getIframeSrc()"></iframe>
-
-<!--	<?php if(isset($_GET['load'])): ?>-->
-<!--		<script>-->
-<!--			var iframe = document.getElementById('<?php echo $iframeID; ?>');-->
-<!--			iframe.dispatchEvent(new Event('mathbox'));-->
-<!--			setupLoadChecker(iframe);-->
-<!--		</script>-->
-<!--	<?php else: ?>-->
-<!--		<script>-->
-<!--			$(document).ready(function(){-->
-<!--				var iframe = document.getElementById('<?php echo $iframeID; ?>');-->
-
-<!--				$(iframe).load(function(){-->
-<!--					var innerDoc = iframe.contentWindow.document;-->
-<!--					$(innerDoc).ready(function(){-->
-<!--						$(innerDoc, 'div#play').click(function(){-->
-<!--							var src = iframe.src;-->
-<!--							var data = iframe.getAttribute('data-src');-->
-
-<!--							// compare only ending-->
-<!--							if(data.length > src.length){-->
-<!--								data = data.substring(data.length - src.length, data.length);-->
-<!--							}else{-->
-<!--								src = src.substring(src.length - data.length, src.length);-->
-<!--							}-->
-
-<!--							// prevent reloading-->
-<!--							if(src != data){-->
-<!--								iframe.src = iframe.getAttribute('data-src');-->
-
-<!--								setupLoadChecker(iframe);-->
-<!--							}-->
-<!--						});-->
-<!--					});-->
-<!--				});-->
-<!--			});-->
-<!--		</script>-->
-<!--	<?php endif; ?>-->
+	<iframe *ngIf="playing" class="mathbox present-canvas" [src]="getIframeSrc()"></iframe>
 
 	<div class="slide-text">
 		<h4>{{ title }}</h4>
-		<div class="slide-number" data-iframeid="<?php echo $iframeID; ?>"></div>
+		<div class="slide-number">{{ slideNo + 1 }}/{{ slides.length }}</div>
 
-<!--		<?php $sliden = 1; ?>-->
-<!--		<?php foreach($this->slides as $slide): ?>-->
-<!--			<?php-->
-<!--				if($slide['back'] != 0){-->
-<!--					$sliden -= $slide['back'];-->
-<!--				}-->
-
-<!--				$num = '';-->
-<!--				for($i = 0; $i < $slide['late'] + 1; ++$i){-->
-<!--					$num .= $sliden++ . ' ';-->
-<!--				}-->
-<!--			?>-->
-<!--			<div class="slide" data-slide="<?php echo $num; ?>">-->
-<!--				<?php-->
-<!--				if(function_exists($slide['content'])){-->
-<!--					$slide['content']();-->
-<!--				}else{-->
-<!--					echo $slide['content'];-->
-<!--				}-->
-<!--				?>-->
-<!--			</div>-->
-<!--		<?php endforeach; ?>-->
-
-    <div class="slide" data-slide="<?php echo $num; ?>" *ngFor="let slide of slides; let i = index">
-      {{ slide.content }}
-    </div>
+    <ng-container *ngFor="let slide of slides; let i = index">
+      <div class="slide" [hidden]="slideNo !== i " [innerHTML]="slide.content"></div>
+    </ng-container>
 
 		<div class="clear"></div>
 		<div class="slide-buttons">
-			<div class="arrow-left" data-iframeid="<?php echo $iframeID; ?>"></div>
-			<div class="arrow-reload" data-iframeid="<?php echo $iframeID; ?>"></div>
-			<div class="arrow-right" data-iframeid="<?php echo $iframeID; ?>"></div>
+			<div class="arrow-left"
+           (click)="slideBack()"
+           [class.disabled]="!playing || slideNo == 0"></div>
+			<div class="arrow-reload"
+           (click)="slideReload()"
+           [class.disabled]="!playing"></div>
+			<div class="arrow-right"
+           (click)="slideNext()"
+           [class.disabled]="!playing || slideNo == slides.length - 1"></div>
 		</div>
 	</div>
 </div>
