@@ -6,7 +6,7 @@
 	}).transform({
 		position: [0, -4, 0]
 	});
-	
+
 	present.slide({
 		late: 6,
 	}).reveal({
@@ -32,9 +32,9 @@
 			width: 5,
 			zBias: -6,
 		})
-		
+
 		.interval({
-			length: 512,
+      width: 512,
 			expr: function(emit, x, i, t){
 				emit(x, Math.exp(x), 0);
 			},
@@ -44,7 +44,7 @@
 			width: 15,
 			color: Config.colors.blue,
 		});
-	
+
 	var params = null;
 	function getParams2(){
 		if(params == null){
@@ -56,10 +56,10 @@
 				present.select('#dumb2-param5').get('position')
 			];
 		}
-		
+
 		return [params[0].x, params[1].x, params[2].x, params[3].x, params[4].x];
 	}
-	
+
 	present.slide({
 		late: 5,
 	}).reveal({
@@ -135,9 +135,9 @@
 				]
 			})
 		.end()
-		
+
 		.interval({
-			length: 512,
+      width: 512,
 			expr: function(emit, x, i, t){
 				var params = getParams2();
 				var func =
@@ -154,11 +154,11 @@
 							))
 						))
 					));
-				
+
 				if(params[4] != 0){
 					func += normalizeParam(params[4], 10, x)*(Math.exp(x) - func);
 				}
-				
+
 				emit(x, func, 0);
 			}
 		})
@@ -167,6 +167,6 @@
 			color: Config.colors.orange,
 			zBias: 8,
 		});
-	
+
 	dumbSlides(present, 5);
 })();

@@ -1,10 +1,10 @@
 
 function normalizeParam(param, deg, x){
 	if(param == 1) return 1;
-	
+
 	param = param/(1-Math.pow(param, 1/20/deg/deg));
 	param = param/(x*x+param);
-	
+
 	return param;
 }
 
@@ -13,12 +13,12 @@ function normalizeParam(param, deg, x){
 		range: [[-50, 50], [-50, 50], [-50, 50]],
 		scale: [25, 25, 25],
 	});
-	
+
 	var slide;
 	scriptCamera(slide = present.slide({
 		late: 31,
 	}));
-	
+
 	slide.group()
 		.axis({
 			axis: 1,
@@ -45,9 +45,9 @@ function normalizeParam(param, deg, x){
 			{ visible: false }
 		]
 	});
-	
+
 	// ======================================
-	
+
 	present.slide({
 		late: 7,
 	}).reveal({
@@ -73,9 +73,9 @@ function normalizeParam(param, deg, x){
 			width: 5,
 			zBias: -6,
 		})
-		
+
 		.interval({
-			length: 512,
+			width: 512,
 			expr: function(emit, x, i, t){
 				emit(x, Math.sin(x), 0);
 			},
@@ -85,7 +85,7 @@ function normalizeParam(param, deg, x){
 			width: 15,
 			color: Config.colors.blue,
 		});
-	
+
 	var params = null;
 	function getParams(){
 		if(params == null){
@@ -97,10 +97,10 @@ function normalizeParam(param, deg, x){
 				present.select('#dumb-param5').get('position')
 			];
 		}
-		
+
 		return [params[0].x, params[1].x, params[2].x, params[3].x, params[4].x];
 	}
-	
+
 	present.slide({
 		late: 6,
 	}).reveal({
@@ -176,9 +176,9 @@ function normalizeParam(param, deg, x){
 				]
 			})
 		.end()
-		
+
 		.interval({
-			length: 512,
+      width: 512,
 			expr: function(emit, x, i, t){
 				var params = getParams();
 				var func =
@@ -195,11 +195,11 @@ function normalizeParam(param, deg, x){
 							))
 						))
 					));
-				
+
 				if(params[4] != 0){
 					func += normalizeParam(params[4], 20, x)*(Math.sin(x) - func);
 				}
-				
+
 				emit(x, func, 0);
 			}
 		})
@@ -208,6 +208,6 @@ function normalizeParam(param, deg, x){
 			color: Config.colors.orange,
 			zBias: 8,
 		});
-	
+
 	dumbSlides(present, 6);
 })();

@@ -6,9 +6,9 @@
 	}).transform({
 		position: [0, 1, 0]
 	});
-	
+
 	var maximumSum = 30;
-	
+
 	present.slide({
 		late: 7,
 	}).reveal({
@@ -34,13 +34,13 @@
 			width: 5,
 			zBias: -6,
 		})
-		
+
 		.interval({
 			range: [0, 50],
-			length: 512,
+      width: 512,
 			expr: function(emit, x, i, t){
 				x = Math.pow(x, 10)/Math.pow(50, 9);
-				
+
 				emit(x, Math.log(x), 0);
 			},
 			live: false,
@@ -49,7 +49,7 @@
 			width: 15,
 			color: Config.colors.blue,
 		});
-	
+
 	var params = null;
 	function getParams3(){
 		if(params == null){
@@ -61,10 +61,10 @@
 				present.select('#dumb3-param5').get('position')
 			];
 		}
-		
+
 		return [params[0].x, params[1].x, params[2].x, params[3].x, params[4].x];
 	}
-	
+
 	present.slide({
 		late: 6,
 	}).reveal({
@@ -140,13 +140,13 @@
 				]
 			})
 		.end()
-		
+
 		.interval({
-			length: 512,
+      width: 512,
 			expr: function(emit, x, i, t){
 				x = Math.pow(x, 5)/Math.pow(50, 4);
 				x -= 1;
-				
+
 				var params = getParams3();
 				var func =
 					x +
@@ -162,7 +162,7 @@
 							))
 						))
 					));
-				
+
 				if(params[4] != 0){
 					var sum = 0;
 					for(var i = 6; i < 2*Math.ceil(50*params[4]); ++i){
@@ -173,7 +173,7 @@
 					}
 					func += sum;
 				}
-				
+
 				emit(x + 1, func, 0);
 			}
 		})
@@ -182,6 +182,6 @@
 			color: Config.colors.orange,
 			zBias: 8,
 		});
-	
+
 	dumbSlides(present, 6);
 })();

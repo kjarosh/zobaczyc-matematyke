@@ -15,6 +15,7 @@ import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.componen
 import { P4Func3dComponent } from './pages/p4-func3d/p4-func3d.component';
 import { P5LimitsDerivativeComponent } from './pages/p5-limits-derivative/p5-limits-derivative.component';
 import { P6MobiusComponent } from './pages/p6-mobius/p6-mobius.component';
+import { P7TaylorSeriesComponent } from './pages/p7-taylor-series/p7-taylor-series.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { P6MobiusComponent } from './pages/p6-mobius/p6-mobius.component';
     P4Func3dComponent,
     P5LimitsDerivativeComponent,
     P6MobiusComponent,
+    P7TaylorSeriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { P6MobiusComponent } from './pages/p6-mobius/p6-mobius.component';
     P4Func3dComponent,
     P5LimitsDerivativeComponent,
     P6MobiusComponent,
+    P7TaylorSeriesComponent,
   ],
 })
 export class AppModule {
