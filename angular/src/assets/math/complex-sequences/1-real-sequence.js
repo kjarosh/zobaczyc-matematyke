@@ -1,6 +1,6 @@
 (function realSequence(){
 	var length = 20;
-	
+
 	var present = presentation.transform({
 		id: 'rs-transformp',
 		//position: [0, 0, -2], // scripted
@@ -12,17 +12,17 @@
 		range: [[0, length], [-0, 2], [-1,1]],
 		//scale: [2, 1, 1], // scripted
 	});
-	
+
 	var sequenceExpr = function(emit, x, i, t){
 		emit(x, -1.4/Math.pow(2, x/4) + 1.5, 0)
 	};
-	
+
 	var slide = present.slide({
 		late: 2
 	}).reveal({
 		duration: 1,
 	});
-	
+
 	slide.axis({
 		axis: 1,
 		width: 6,
@@ -37,25 +37,25 @@
 		divideY: 10,
 		width: 1,
 	});
-	
+
 	slide.interval({
 		expr: sequenceExpr,
 		range: [1, length],
-		length: length,
+    width: length,
 	}).point({
 		color: Config.colors.green,
 		size: 10,
 	});
-	
+
 	slide.array({
 		channels: 2,
-		length: 2,
+		width: 2,
 		data: [0, 1.5, length, 1.5],
 	}).line({
 		color: Config.colors.red,
 		width: 5,
 	});
-	
+
 	slide.step({
 		target: '#rs-cartesian',
 		script: [
@@ -80,26 +80,26 @@
 		],
 		pace: 3,
 	});
-	
+
 	present.slide();
-	
+
 	present.slide().reveal({
 		duration: 1,
 	})
 		.array({
 			channels: 2,
-			length: 1,
+			width: 1,
 			data: [0, 1.5],
 		}).point({
 			color: Config.colors.red,
 			size: 10,
 			zIndex: 10,
 		})
-		
+
 		.interval({
 			expr: sequenceExpr,
 			range: [length + 1, 64],
-			length: 64,
+			width: 64,
 		}).point({
 			color: Config.colors.green,
 			size: 10,

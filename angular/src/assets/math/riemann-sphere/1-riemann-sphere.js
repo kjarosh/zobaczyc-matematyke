@@ -17,16 +17,16 @@ var pointSize = 20;
 		range: [[-100, 100], [-100, 100], [-100, 100]],
 		scale: [50, 50, 50],
 	});
-	
+
 	var elementsNum = 50;
-	
+
 	present.area({
 		id: 'planeColors',
 		width: gridRange*gridMultiplier + +gridOdd,
 		height: gridRange*gridMultiplier + +gridOdd,
 		expr: function(emit, x, y, i, j, time){
 			var a = 1;
-			
+
 			if(
 				Math.abs(x) > gridRange - gridColorMargin ||
 				Math.abs(y) > gridRange - gridColorMargin
@@ -36,7 +36,7 @@ var pointSize = 20;
 				var max = Math.max(Math.abs(y), Math.abs(x));
 				a = (Math.cos(2*Math.PI*(max-a)/b/2)+1)/2;
 			}
-			
+
 			emit(gridColor[0]/255, gridColor[1]/255, gridColor[2]/255, a);
 		},
 		rangeX: [-gridRange, gridRange],
@@ -45,13 +45,13 @@ var pointSize = 20;
 		items: 1,
 		live: false,
 	});
-	
+
 	var slide = present.slide({
 		late: 16,
 	});
-	
+
 	scriptCamera(slide);
-	
+
 	slide.reveal({
 		duration: 1,
 	})
@@ -67,7 +67,7 @@ var pointSize = 20;
 				],
 				pace: 1,
 			})
-			
+
 			// plane
 			.area({
 				id: 'plane-points',
@@ -92,7 +92,7 @@ var pointSize = 20;
 				width: linesWidth,
 				colors: '#planeColors',
 			})
-			
+
 			// sphere
 			.area({
 				id: 'sphere-points',
@@ -109,7 +109,7 @@ var pointSize = 20;
 				live: false,
 			})
 		.end();
-	
+
 	present.slide({
 		late: 9,
 	}).reveal({
@@ -133,7 +133,7 @@ var pointSize = 20;
 				color: Config.colors.white,
 			})
 		.end();
-	
+
 	present.slide({
 		late: 8,
 	}).reveal({
@@ -141,7 +141,7 @@ var pointSize = 20;
 	})
 		// red point
 		.array({
-			length: 1,
+			width: 1,
 			channels: 3,
 			data: [0, 1, 0],
 		}).point({
@@ -149,7 +149,7 @@ var pointSize = 20;
 			size: pointSize,
 			zIndex: 2,
 		});
-	
+
 	present.slide({
 		late: 7,
 	}).reveal({
@@ -158,14 +158,14 @@ var pointSize = 20;
 		// blue point
 		.array({
 			id: 'bpoint-array',
-			length: 1,
+      width: 1,
 			channels: 3,
 		}).step({
 			script: [
 				{ data: [2, -1, -2] },
 				{ data: [2, -1, -2] },
 				{ data: [2, -1, -2] },
-				
+
 				{ data: [2, -1, 1] },
 				{ data: [-2, -1, 3] },
 				{ data: [-10, -1, 5] },
@@ -177,16 +177,16 @@ var pointSize = 20;
 			color: Config.colors.blue,
 			size: pointSize,
 		});
-	
+
 	var bluePoint = null;
 	function getBluePoint(){
 		//if(bluePoint == null){
 			bluePoint = present.select('#bpoint-array').get('data');
 		//}
-		
+
 		return bluePoint;
 	}
-	
+
 	present.slide({
 		late: 6,
 	}).reveal({
@@ -194,12 +194,12 @@ var pointSize = 20;
 	})
 		// line
 		.array({
-			length: 2,
+      width: 2,
 			channels: 3,
 		}, {
 			data: function(t){
 				var b = getBluePoint();
-				
+
 				if(b != null){
 					return [0, 1, 0, b[0], b[1], b[2]];
 				}else{
@@ -211,7 +211,7 @@ var pointSize = 20;
 			width: 4,
 			zOrder: 5,
 		});
-	
+
 	present.slide({
 		late: 5,
 	}).reveal({
@@ -219,12 +219,12 @@ var pointSize = 20;
 	})
 		// intersection point
 		.array({
-			length: 1,
+      width: 1,
 			channels: 3,
 		}, {
 			data: function(t){
 				var b = getBluePoint();
-				
+
 				if(b != null){
 					var p = RiemannSphere.xyToRiemann(b[0], b[2]);
 					return [p[0], p[2] - 1, p[1]];
@@ -238,11 +238,11 @@ var pointSize = 20;
 			zOrder: 5,
 			zBias: 5,
 		});
-	
+
 	dumbSlides(present, 5);
-	
+
 	// =====================================================================================================================================
-	
+
 	present.slide({
 		late: 5
 	})
@@ -259,7 +259,7 @@ var pointSize = 20;
 				zBias: 4,
 				opacity: 0.7,
 			})
-			
+
 			// sphere lines
 			.line({
 				points: '#sphere-points',
@@ -275,29 +275,29 @@ var pointSize = 20;
 				zBias: 5,
 				width: linesWidth,
 			});
-	
+
 	present.transform({
 		id: 'starting-point-polar',
 	});
-	
+
 	var startingPointPolar = null;
 	function getStartingPointPolar(){
 		if(startingPointPolar == null){
 			startingPointPolar = present.select('#starting-point-polar').get('position');
 		}
-		
+
 		return [startingPointPolar.x, startingPointPolar.y];
 	}
-	
+
 	var seqFunc = function(x){
 		var p = getStartingPointPolar();
-		
+
 		var re = Math.pow(p[0], x)*Math.cos(x*p[1]);
 		var im = Math.pow(p[0], x)*Math.sin(x*p[1]);
-		
+
 		return [re, im];
 	};
-	
+
 	present.slide({
 		late: 4
 	})
@@ -323,7 +323,7 @@ var pointSize = 20;
 				color: Config.colors.blue,
 				size: pointSize,
 			})
-			
+
 			.interval({
 				range: [1, 100],
 				length: 100,
@@ -331,7 +331,7 @@ var pointSize = 20;
 				expr: function(emit, x, i, t){
 					var res = seqFunc(x);
 					res = RiemannSphere.xyToRiemann(res[0], res[1]);
-					
+
 					emit(res[0], res[2] - 1, res[1]);
 				},
 			}).point({
@@ -340,7 +340,7 @@ var pointSize = 20;
 				zBias: 6,
 				//zOrder: 6,
 			})
-			
+
 			// animate sequence
 			.step({
 				target: '#starting-point-polar',
@@ -353,6 +353,6 @@ var pointSize = 20;
 					{ position: [2, 0.05, 0] },
 				],
 			});
-	
+
 	dumbSlides(present, 3);
 })();

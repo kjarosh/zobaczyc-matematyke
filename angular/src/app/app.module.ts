@@ -9,8 +9,9 @@ import {LoadingComponent} from './loading/loading.component';
 import {P2IntroComponent} from './pages/p2-intro/p2-intro.component';
 import {SlidesHelperComponent} from './helper/slides-helper/slides-helper.component';
 import {PageHostDirective} from './directives/page-host.directive';
-import { HeaderComponent } from './header/header.component';
-import { CachedSrcDirective } from './directives/cached-src.directive';
+import {HeaderComponent} from './header/header.component';
+import {CachedSrcDirective} from './directives/cached-src.directive';
+import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CachedSrcDirective } from './directives/cached-src.directive';
     PageHostDirective,
     HeaderComponent,
     CachedSrcDirective,
+    P3SeqSphereComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,8 +36,8 @@ import { CachedSrcDirective } from './directives/cached-src.directive';
     P0TocComponent,
     P1InfoComponent,
     P2IntroComponent,
+    P3SeqSphereComponent,
   ],
 })
 export class AppModule {
 }
-

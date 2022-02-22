@@ -14,23 +14,23 @@
 
 	<div class="slide-text">
 		<h4>{{ title }}</h4>
-		<div class="slide-number">{{ slideNo + 1 }}/{{ slides?.length }}</div>
+		<div class="slide-number">{{ slideNo + 1 }}/{{ slidesMapped?.length }}</div>
 
-    <ng-container *ngFor="let slide of slides; let i = index">
+    <ng-container *ngFor="let slide of slidesMapped; let i = index">
       <div class="slide" [hidden]="slideNo !== i " [innerHTML]="slide.content"></div>
     </ng-container>
 
 		<div class="clear"></div>
 		<div class="slide-buttons">
 			<div class="arrow-left"
-           (click)="slideBack()"
-           [class.disabled]="!playing || slideNo === 0"></div>
+           (click)="slidePrev()"
+           [class.disabled]="!slidePrevAvailable()"></div>
 			<div class="arrow-reload"
            (click)="slideReload()"
            [class.disabled]="!playing"></div>
 			<div class="arrow-right"
            (click)="slideNext()"
-           [class.disabled]="!playing || slideNo + 1 === slides?.length"></div>
+           [class.disabled]="!slideNextAvailable()"></div>
 		</div>
 	</div>
 </div>

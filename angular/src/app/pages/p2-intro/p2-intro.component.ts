@@ -8,13 +8,12 @@ import {Slide} from '../../helper/slides-helper/slides-helper.component';
   styleUrls: ['./p2-intro.component.less']
 })
 export class P2IntroComponent implements PageTemplate, OnInit {
-
   complexAlgebraSlidesAdd: Array<Slide> = [
     {content: 'Zacznijmy od prostej rzeczywistej.'},
     {content: 'Na niej znajdują się wszystkie liczby rzeczywiste.'},
     {
       content: `Jesteśmy w stanie dodać do niej nowy wymiar &mdash; "urojony".
-        W taki sposób powstaje <em>płaszczyzna zespolona</em>.`
+      W taki sposób powstaje <em>płaszczyzna zespolona</em>.`
     },
     {
       content: `Na niej znajdują się już wszystkie liczby zespolone, każda postaci
@@ -45,7 +44,7 @@ export class P2IntroComponent implements PageTemplate, OnInit {
   complexAlgebraSlidesProd: Array<Slide> = [
     {
       content: `Aby wyobrazić sobie mnożenie i dzielenie należy wprowadzić pojęcie <em>postaci trygonometrycznej</em> liczby zespolonej.
-    Weźmy pod uwagę dowolną liczbę zespoloną $\{\\color{red}{a}}$.`
+      Weźmy pod uwagę dowolną liczbę zespoloną $\{\\color{red}{a}}$.`
     },
     {content: `Oznaczmy przez $\{\\color{blue}{r}}$ jej <em>moduł</em> czyli odległość od punktu $0$, ...`},
     {
@@ -109,5 +108,4 @@ export class P2IntroComponent implements PageTemplate, OnInit {
   getPageTitle(): string {
     return 'Wstęp do liczb zespolonych - Zbaczając z osi rzeczywistej';
   }
-
 }

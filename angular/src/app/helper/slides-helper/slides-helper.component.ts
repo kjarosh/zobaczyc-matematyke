@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 export interface Slide {
   content: string;
+  width?: number;
 }
 
 @Component({
@@ -16,8 +17,18 @@ export class SlidesHelperComponent implements OnInit {
   @Input()
   title: string;
 
+  slidesUnmapped: Array<Slide>;
+  slidesMapped: Array<Slide>;
+
   @Input()
-  slides: Array<Slide>;
+  public get slides(): Array<Slide> {
+    return this.slidesUnmapped;
+  }
+
+  public set slides(slides: Array<Slide>) {
+    this.slidesUnmapped = slides;
+    this.slidesMapped = this.mapSlides(this.slidesUnmapped);
+  }
 
   @ViewChild('iframe', {static: false})
   iframe: ElementRef;
@@ -33,34 +44,29 @@ export class SlidesHelperComponent implements OnInit {
     this.slideReload();
   }
 
-  setupLoadChecker(iframe) {
-    const IFRAME_LOADER_LAST_SLIDES = 0;
-    const interval = setInterval(checkLoaded, 100);
-
-    function checkLoaded() {
-      if (iframe.contentWindow.Config && iframe.contentWindow.mathbox) {
-        clearInterval(interval);
-
-        // iframe.dispatchEvent(new Event('mathbox'));
-
-        const evt = document.createEvent('Event');
-        evt.initEvent('mathbox', true, true);
-        document.dispatchEvent(evt);
-
-        // TODO setupSlideChecker(iframe);
+  private mapSlides(slides: Array<Slide>): Array<Slide> {
+    const ret = [];
+    slides.forEach(slide => {
+      for (let i = 0; i < (slide.width || 1); ++i) {
+        ret.push(slide);
       }
-    }
+    });
+    return ret;
   }
 
   play() {
     this.playing = true;
   }
 
-  slideBack() {
-    if (this.slideNo > 0) {
+  slidePrev() {
+    if (this.slidePrevAvailable()) {
       this.slideNo--;
       this.iframe.nativeElement.contentWindow.Config.prevSlide();
     }
+  }
+
+  slidePrevAvailable() {
+    return this.playing && this.slideNo > 0;
   }
 
   slideReload() {
@@ -69,9 +75,13 @@ export class SlidesHelperComponent implements OnInit {
   }
 
   slideNext() {
-    if (this.slideNo + 1 < this.slides.length) {
+    if (this.slideNextAvailable()) {
       this.slideNo++;
       this.iframe.nativeElement.contentWindow.Config.nextSlide();
     }
+  }
+
+  slideNextAvailable() {
+    return this.playing && this.slideNo + 1 < this.slidesMapped.length;
   }
 }
