@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>3D Function Modelling</title>
+	<title>Complex Function Plotting</title>
   <script src="../../jquery/jquery.js"></script>
   <script src="../../mathbox/mathbox-bundle.js"></script>
   <link rel="stylesheet" href="../../mathbox/mathbox.css">
@@ -41,48 +41,17 @@ var presentation = view.present({
 
 var camera = presentation.camera({
 	proxy: true,
-	position: [0, 0, 10],
+	position: [2, 2, 4],
 	lookAt: [0, 0, 0],
 });
 
-function scriptCamera(node){
-	node.step({
-		target: 'camera',
-		script: [
-			{ position: [0, 0, 6] },
-			{ position: [0, 0, 6] },
-			{ position: [0, 0, 6] },
-			{ position: [0, 0, 6] },
-			{ position: [-1, 1, 5] },
-			{ position: [-3.5, 3, 1.5] },
-
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-			{ position: [-3.5, 3, 1.5] },
-
-			{ position: [-11.5, 4, 6.5] },
-		],
-		pace: 1,
-	});
-}
-
-three.on('pre', function(){
-	if(Config.slideNumber() <= 4){
-		three.camera.position.set(0, 0, 6);
-	}
-});
+presentation.slide();
 
 Config.registerPresentation(presentation);
 </script>
-<script src="1-param-func.js"></script>
-<script src="2-func-model.js"></script>
-<script src="3-examples.js"></script>
-<script src="4-param-examples.js"></script>
+<script src="../functions.js"></script>
+
+<script src="1-complex-map.js"></script>
 
 </body>
 </html>

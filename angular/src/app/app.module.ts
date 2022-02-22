@@ -12,6 +12,7 @@ import {PageHostDirective} from './directives/page-host.directive';
 import {HeaderComponent} from './header/header.component';
 import {CachedSrcDirective} from './directives/cached-src.directive';
 import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.component';
+import { P4Func3dComponent } from './pages/p4-func3d/p4-func3d.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.componen
     HeaderComponent,
     CachedSrcDirective,
     P3SeqSphereComponent,
+    P4Func3dComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.componen
     P1InfoComponent,
     P2IntroComponent,
     P3SeqSphereComponent,
+    P4Func3dComponent,
   ],
 })
 export class AppModule {

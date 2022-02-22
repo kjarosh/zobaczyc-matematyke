@@ -3,22 +3,14 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>Complex Function Plotting</title>
-	<script src="../../jslib/jquery.min.js"></script>
-	<script src="../../jslib/mathbox2/mathbox-bundle.js"></script>
-	<link rel="stylesheet" href="../../jslib/mathbox2/mathbox.min.css"/>
+  <script src="../../jquery/jquery.js"></script>
+  <script src="../../mathbox/mathbox-bundle.js"></script>
+  <link rel="stylesheet" href="../../mathbox/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
 <script type="application/javascript" src="../config.js"></script>
 <script type="application/javascript" src="../math-lib.js"></script>
-<?php
-$module = '';
-if(!isset($_GET['module'])){
-	$module = 'all';
-}else{
-	$module = $_GET['module'];
-}
-?>
 <script type="application/javascript">
 Config.registerInsert();
 
@@ -53,26 +45,11 @@ var camera = presentation.camera({
 	lookAt: [0, 0, 0],
 });
 
-<?php if($module == 'all' || $module == 'map'): ?>
-presentation.slide();
-<?php endif; ?>
-
 Config.registerPresentation(presentation);
 </script>
 <script src="../functions.js"></script>
 
-<?php if($module == 'all' || $module == 'map'): ?>
-<script src="1-complex-map.js"></script>
-<?php endif; ?>
-
-<?php if($module == 'all' || $module == 'plot'): ?>
 <script src="2-re-im-plot.js"></script>
-<?php endif; ?>
-
-<?php if($module == 'all' || $module == 'coloring'): ?>
-<script src="3-domain-coloring.js"></script>
-<?php endif; ?>
-
 
 </body>
 </html>

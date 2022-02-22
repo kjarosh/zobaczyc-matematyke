@@ -1,0 +1,139 @@
+<div class="content">
+  <p class="prev-toc">
+    <a href="?page=0">Spis treści</a>
+  </p>
+
+  <h2>Funkcje dwóch zmiennych</h2>
+
+  <p>
+    Matematycy zajmują się funkcjami wielu zmiennych. Czym jednak one są?
+    Funkcja $g$ jednej zmiennej przyporządkowuje liczbom rzeczywistym liczby rzeczywiste, zapisujemy to
+    w następujący sposób:
+
+    {{ '$$g:\\mathbb{R}\\to\\mathbb{R}$$' }}
+  </p>
+
+  <p>
+    Funkcja $f$ dwóch zmiennych przyporządkowuje <em>parom</em> liczb rzeczywistych liczby rzeczywiste.
+    Oznacza to, iż wartość tej funkcji zależy od dwóch zmiennych. Zapisujemy to w następujący sposób:
+
+    {{ '$$f:{\\color{blue}{\\mathbb{R}\\times\\mathbb{R} } }\\to{\\color{red}{\\mathbb{R} } }$$' }}
+
+    W tym wypadku zbiór wszystkich par liczb rzeczywistych {{ '${\\color{blue}{\\mathbb{R}\\times\\mathbb{R} } }$' }} jest
+    dziedziną funkcji $f$, natomiast {{ '${\\color{red}{\\mathbb{R} } }$' }} jest przeciwdziedziną.
+  </p>
+
+  <p>
+    Wzór funkcji dwóch zmiennych może być podany bezpośrednio, na przykład:
+
+    {{ '$$f(x,y)=x^2+y^2$$' }}
+
+    Wtedy punktowi $(1,2)$ jest przyporządkowana liczba $f(1,2)=5$.
+  </p>
+
+  <h3>"Modelowanie" funkcji dwóch zmiennych</h3>
+
+  <p>
+    Wykres funkcji jednej zmiennej jest krzywą. Czym więc jest wykres funkcji dwóch zmiennych?
+    <em>Powierzchnią.</em>
+  </p>
+
+  <p>
+    Jest tak dlatego, że dziedziną funkcji jest płaszczyzna. Gdyby płaszczyzną była
+    powierzchnia jakiegoś biurka i w każdym miejscu blatu biurka narysowalibyśmy punkt na wysokości
+    wartości funkcji w tym miejscu, byłaby to jakaś "unosząca się" powierzchnia.
+  </p>
+
+  <p>
+    Można wyobrazić sobie to inaczej. W szkole średniej często spotykamy się z tak zwanym
+    <em>parametrem funkcji</em>. Zmieniając parametr, zmienia nam się wykres tej funkcji.
+
+    Taką właśnie funkcję z parametrem możemy nazywać funkcją wielu zmiennych traktując
+    parametr jako drugą zmienną.
+  </p>
+
+</div>
+<app-slides-helper
+  title="Modelowanie Funkcji 3D"
+  src="assets/math/func-model/func-model.html"
+  [slides]="funcModelSlides"></app-slides-helper>
+<!--<?php include dirname(__FILE__) . '/../math/func-model/func-model.php'; ?>-->
+<div class="content">
+
+  <h2>Funkcje zespolone</h2>
+
+  <p>
+    Funkcja zespolona $f$ jest to przyporządkowanie &mdash; liczbom
+    zespolonym przyporządkowujemy liczby zespolone:
+
+    $$f:\mathbb C\to\mathbb C$$
+
+    Jeśli traktować liczbę zespoloną jako
+    parę liczb rzeczywistych jest to funkcja
+
+    {{ '$$f:\\mathbb{R}\\times\\mathbb{R}\\to\\mathbb{R}\\times\\mathbb{R}$$' }}
+
+    Oznacza to, że potrzebujemy aż <em>czterech</em> wymiarów aby taką funkcję
+    narysować.
+  </p>
+
+  <p>
+    Na tej stronie będziemy mówili głównie o funkcjach <em>holomorficznych</em>. To znaczy takich,
+    które są różniczkowalne. Posiadają one wiele ciekawych własności.
+  </p>
+
+  <h3>Sposoby przedstawiania funkcji zespolonej</h3>
+
+  <p>
+    Pierwszym sposobem są tak zwane mapy zespolone.
+    Są to dwa rysunki jakiejś figury, najczęściej kolorowej wraz z wyznaczonymi
+    liniami. Pierwsza jest figurą oryginalną, druga natomiast figurą poddaną przekształceniu (funkcji).
+  </p>
+
+</div>
+<app-slides-helper
+  title="Mapy zespolone"
+  src="assets/math/complex-3d/complex-3d-map.html"
+  [slides]="complex3dSlidesMap"></app-slides-helper>
+<!--<?php $module = 'map'; include dirname(__FILE__) . '/../math/complex-3d/complex-3d.php'; ?>-->
+<div class="content">
+
+  <p>
+    Drugim sposobem jest podzielenie funkcji zespolonej $f$ na dwie funkcje dwóch zmiennych.
+    Każda funkcja zespolona "pobiera", a potem "wyrzuca" dwie liczby rzeczywiste. Gdyby pierwszą funkcję $f_r$
+    zdefiniować jako część rzeczywistą funkcji $f$, a drugą $f_i$ jako część urojoną funkcji $f$, otrzymamy
+    dwie funkcje pobierające po dwie liczby rzeczywiste, a wyrzucające tylko jedną:
+
+    $$f_r(x,y)=\Re f(x+yi)$$
+    $$f_i(x,y)=\Im f(x+yi)$$
+  </p>
+
+</div>
+<app-slides-helper
+  title="Dwa wykresy funkcji dwóch zmiennych"
+  src="assets/math/complex-3d/complex-3d-plot.html"
+  [slides]="complex3dSlidesPlot"></app-slides-helper>
+<!--<?php $module = 'plot'; include dirname(__FILE__) . '/../math/complex-3d/complex-3d.php'; ?>-->
+<div class="content">
+
+  <p>
+    Trzecim sposobem jest technika kolorowania dziedziny. Mając płaszczyznę zespoloną
+    każdy punkt kolorujemy zależnie od wartości tej funkcji w punkcie. Najczęściej bierze
+    się pod uwagę argument i moduł wartości.
+
+    Technika ta jednak jest bardzo skomplikowana, szczególnie dla początkujących osób,
+    które dopiero odkrywają analizę zespoloną.
+  </p>
+
+</div>
+<app-slides-helper
+  title="Technika kolorowania dziedziny"
+  src="assets/math/complex-3d/complex-3d-coloring.html"
+  [slides]="complex3dSlidesColoring"></app-slides-helper>
+<!--<?php $module = 'coloring'; include dirname(__FILE__) . '/../math/complex-3d/complex-3d.php'; ?>-->
+<div class="content">
+
+  <p class="next-page">
+    <a href="?page=5">Następna strona: Granice funkcji zespolonej i pochodna zespolona</a>
+  </p>
+</div>

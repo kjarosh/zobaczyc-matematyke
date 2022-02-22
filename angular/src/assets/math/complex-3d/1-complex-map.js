@@ -4,10 +4,10 @@
 		range: [[-1, 1], [-1, 1], [-1, 1]],
 		scale: [1.5, 1.5, 1.5],
 	});
-	
+
 	var resolution = 6;
 	var linemultiplier = 3;
-	
+
 	present.area({
 		id: 'plane-colors-low',
 		height: resolution,
@@ -18,12 +18,12 @@
 		expr: function(emit, x, y, i, j, time){
 			var h = y;
 			var rgb = ColorConvert.HSVtoRGB(h, 1, 1);
-			
+
 			emit(rgb[0], rgb[1], rgb[2], 1);
 		},
 		live: false,
 	});
-	
+
 	present.area({
 		id: 'plane-points-low',
 		height: resolution,
@@ -36,7 +36,7 @@
 		},
 		live: false,
 	});
-	
+
 	present.area({
 		id: 'plane-colors',
 		height: resolution*linemultiplier,
@@ -47,17 +47,17 @@
 		expr: function(emit, x, y, i, j, time){
 			var h = y;
 			var rgb = ColorConvert.HSVtoRGB(h, 1, 1);
-			
+
 			emit(rgb[0], rgb[1], rgb[2], 1);
 		},
 		live: false,
 	});
-	
+
 	function renderMap(func, slide, range, scale){
 		if(!scale){
 			scale = 1;
 		}
-		
+
 		slide.transform({
 			pass: 'eye',
 			position: [-1.2, 0, -4],
@@ -73,7 +73,7 @@
 				zIndex: 1,
 				color: 'black',
 			})
-			
+
 			.grid({
 				axes: [1, 3],
 				divideX: 10,
@@ -81,20 +81,20 @@
 				width: 1,
 				zBias: -10,
 			})
-			
+
 			.surface({
 				colors: '#plane-colors-low',
 				points: '#plane-points-low',
 				color: Config.colors.white,
 			})
-			
+
 			.line({
 				points: '#plane-points-low',
 				width: 4,
 				color: Config.colors.black,
 				zBias: 20,
 			})
-			
+
 			.transpose({
 				source: '#plane-points-low',
 				order: 'yx',
@@ -103,7 +103,7 @@
 				color: Config.colors.black,
 				zBias: 20,
 			});
-		
+
 		var node = slide.transform({
 			pass: 'eye',
 			position: [1.2, 0, -4],
@@ -119,7 +119,7 @@
 				zIndex: 1,
 				color: 'black',
 			})
-			
+
 			.grid({
 				axes: [1, 3],
 				divideX: 10,
@@ -127,7 +127,7 @@
 				width: 1,
 				zBias: -10,
 			})
-			
+
 			.area({
 				height: resolution*linemultiplier,
 				width: resolution*linemultiplier,
@@ -143,15 +143,15 @@
 				colors: '#plane-colors',
 				color: Config.colors.white,
 			});
-		
+
 		for(var i = 0; i < resolution; ++i){
 			plotVLine(node, i);
 			plotHLine(node, i);
 		}
-		
+
 		function plotVLine(node, i){
 			node.interval({
-				length: resolution*linemultiplier,
+				width: resolution*linemultiplier,
 				range: [-range, range],
 				expr: function(emit, x, u, t){
 					var y = 2*range/(resolution - 1)*i-range;
@@ -165,10 +165,10 @@
 				zBias: 20,
 			});
 		}
-		
+
 		function plotHLine(node, i){
 			node.interval({
-				length: resolution*linemultiplier,
+        width: resolution*linemultiplier,
 				range: [-range, range],
 				expr: function(emit, y, u, t){
 					var x = 2*range/(resolution - 1)*i-range;
@@ -183,7 +183,7 @@
 			});
 		}
 	}
-	
+
 	renderMap(
 		func1,
 		present.slide().reveal({
@@ -193,7 +193,7 @@
 		1,
 		0.4
 	);
-	
+
 	renderMap(
 		func3,
 		present.slide().reveal({
@@ -203,7 +203,7 @@
 		Math.PI/2,
 		0.3
 	);
-	
+
 	renderMap(
 		func4,
 		present.slide().reveal({
@@ -213,7 +213,7 @@
 		1,
 		0.3
 	);
-	
+
 	renderMap(
 		func5,
 		present.slide().reveal({
@@ -223,7 +223,7 @@
 		1,
 		0.7
 	);
-	
+
 	renderMap(
 		func8,
 		present.slide().reveal({
