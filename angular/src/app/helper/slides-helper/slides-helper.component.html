@@ -7,7 +7,7 @@
       W niektórych prezentacjach możesz poruszać kamerą za pomocą myszy.
     </span>
   </div>
-	<iframe *ngIf="playing" class="mathbox present-canvas" [cachedSrc]="src"></iframe>
+	<iframe *ngIf="playing" class="mathbox present-canvas" [cachedSrc]="iframeSrc"></iframe>
 
 	<div class="slide-text">
 		<h4>{{ title }}</h4>
@@ -21,13 +21,13 @@
 		<div class="slide-buttons">
 			<div class="arrow-left"
            (click)="slideBack()"
-           [class.disabled]="!playing || slideNo == 0"></div>
+           [class.disabled]="!playing || slideNo === 0"></div>
 			<div class="arrow-reload"
            (click)="slideReload()"
            [class.disabled]="!playing"></div>
 			<div class="arrow-right"
            (click)="slideNext()"
-           [class.disabled]="!playing || slideNo == slides.length - 1"></div>
+           [class.disabled]="!playing || slideNo + 1 === slides?.length"></div>
 		</div>
 	</div>
 </div>

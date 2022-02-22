@@ -13,6 +13,8 @@ export class SlidesHelperComponent implements OnInit {
   @Input()
   src: any;
 
+  iframeSrc: string;
+
   @Input()
   title: string;
 
@@ -27,6 +29,7 @@ export class SlidesHelperComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.slideReload();
   }
 
   setupLoadChecker(iframe) {
@@ -53,14 +56,19 @@ export class SlidesHelperComponent implements OnInit {
   }
 
   slideBack() {
-    this.slideNo--;
+    if (this.slideNo > 0) {
+      this.slideNo--;
+    }
   }
 
   slideReload() {
-
+    this.slideNo = 0;
+    this.iframeSrc = this.src + '?time=' + (new Date()).getTime();
   }
 
   slideNext() {
-    this.slideNo++;
+    if (this.slideNo + 1 < this.slides.length) {
+      this.slideNo++;
+    }
   }
 }
