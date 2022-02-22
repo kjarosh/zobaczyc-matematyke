@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Complex integral</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
@@ -56,15 +56,15 @@ function func(x, y){
 
 var path = {
 	range: [-1, 1],
-	
+
 	func: function(t){
 		t = 2*t - 1.6;
 		return -1.6*(t*Math.exp(t) - 0.2);
 	},
-	
+
 	normalize: function(t){
 		//return Math.sqrt(2*t + 2) - 1;
-		
+
 		return (1 - 0.5*(t - 1)*(t - 1) + 0.5*t)/1.5;
 	},
 };
@@ -123,7 +123,7 @@ present.slide({
 			zOrder: 1,
 		})
 	.end()
-	
+
 	.step({
 		target: '#func',
 		pace: 1.5,
@@ -148,7 +148,7 @@ present.slide({
 			range: path.range,
 			expr: function(emit, t, i, time){
 				t = path.normalize(t);
-				
+
 				var x = path.func(t), y = t;
 				emit(x, func(x, y), y);
 			},
@@ -179,7 +179,7 @@ present.slide({
 			zOrder: 3
 		})
 	.end()
-	
+
 	.reveal({
 		delayEnter: 2,
 		duration: 1,
@@ -189,7 +189,7 @@ present.slide({
 			range: path.range,
 			expr: function(emit, t, i, time){
 				t = path.normalize(t);
-				
+
 				var x = path.func(t), y = t;
 				emit(x, 0, y);
 			},
@@ -202,13 +202,13 @@ present.slide({
 			width: 2,
 			zIndex: 2,
 		})
-		
+
 		// projection
 		.interval({
 			range: path.range,
 			expr: function(emit, t, i, time){
 				t = path.normalize(t);
-				
+
 				var x = path.func(t), y = t;
 				emit(x, 0, y);
 				emit(x, func(x, y), y);
@@ -225,7 +225,7 @@ present.slide({
 			zOrder: 4,
 		})
 	.end()
-	
+
 	.step({
 		target: '#vectorProjection',
 		script: [
@@ -251,11 +251,11 @@ present.slide({
 			rangeY: [0, 1],
 			expr: function(emit, u, v, i, j, time){
 				u = path.normalize(u);
-				
+
 				var y = u;
 				var x = path.func(u);
 				var z = func(x, u);
-				
+
 				if(v == 1){
 					emit(x, 0, y);
 				}else{

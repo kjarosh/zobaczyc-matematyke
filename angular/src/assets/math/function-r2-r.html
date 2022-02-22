@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Function &#8477;&#178;&#8594;&#8477;</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
@@ -65,7 +65,7 @@ view.area({
 			)/2 + 1/2) // shift to touch 0 only from above
 			* (80/(r + 50)) // scale function at corners radially
 			+ 0.2; // move up
-		
+
 		emit(x, z, y);
 	},
 	items: 1,

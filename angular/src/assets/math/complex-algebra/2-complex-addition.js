@@ -4,24 +4,24 @@
 
 	var colorA = Config.colors.blue;
 	var colorB = Config.colors.orange;
-	
+
 	var vecB2orig = { data: [
 		0, 0,
 		0.99 * B[0], 0.99 * B[1],
 		B[0], B[1]
 	] };
-	
+
 	var vecB2moved = { data: [
 		A[0] + 0, A[1] + 0,
 		A[0] + 0.99 * B[0], A[1] + 0.99 * B[1],
 		A[0] + B[0], A[1] + B[1]
 	] };
-	
+
 	present = presentation.cartesian({
 		range: [[-1, 5], [-1, 5], [-5,5]],
 		scale: [1, 1, 1],
 	});
-	
+
 	// slide 2: show A and B ====================================================================
 	present.slide({
 		late: 3,
@@ -40,7 +40,7 @@
 				width: 3,
 				detail: 100
 			}).grid({
-				width: 1,  
+				width: 1,
 				divideX: 5,
 				divideY: 5,
 			})
@@ -49,7 +49,7 @@
 				id: 'A',
 				data: A,
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).point({
 				size: 12,
 				color: colorA
@@ -65,12 +65,12 @@
 				depth: .5,
 				zIndex: 1,
 			})
-			
+
 			.array({
 				id: 'B',
 				data: B,
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).point({
 				size: 12,
 				color: colorB
@@ -86,7 +86,7 @@
 				depth: .5,
 				zIndex: 1,
 			})
-			
+
 			.step({
 				target: '#A + point',
 				script: [
@@ -94,7 +94,7 @@
 					{ size: 0 }
 				]
 			})
-			
+
 			.step({
 				target: '#B + point',
 				script: [
@@ -117,7 +117,7 @@
 				id: 'vecA',
 				data: [0, 0, 0.99 * A[0], 0.99 * A[1], A[0], A[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -125,12 +125,12 @@
 				stroke: 'solid',
 				end: true,
 			})
-			
+
 			.array({
 				id: 'vecB',
 				data: [0, 0, 0.99 * B[0], 0.99 * B[1], B[0], B[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -138,12 +138,12 @@
 				end: true,
 				zBias: 2,
 			})
-			
+
 			.array({
 				id: 'vecB2',
 				data: [0, 0, 0.99 * B[0], 0.99 * B[1], B[0], B[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				id: 'vecB2line',
 				size: 4,
@@ -187,7 +187,7 @@
 				id: 'vecAB',
 				data: [0, 0, 0.99 * (A[0] + B[0]), 0.99 * (A[1] + B[1]), (A[0] + B[0]), (A[1] + B[1])],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -196,12 +196,12 @@
 				end: true,
 				zBias: 4,
 			})
-			
+
 			.array({
 				id: 'AB',
 				data: [A[0] + B[0], A[1] + B[1]],
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).text({
 				font: Config.mathFont,
 				style: Config.mathFontStyleVar,

@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Complex Plane</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
@@ -103,7 +103,7 @@
       color: blue,
       size: 10,
     });
-    
+
     // Draw points in RTT, colored with indexes, at reduced resolution.
     var scale = 1 / 4;
 
@@ -121,7 +121,7 @@
         blending: 'no',
       })
     .end();
-    
+
     // Readback RTT pixels
     var readback =
       view
@@ -129,37 +129,37 @@
         id: 'indexbuffer',
         type: 'unsignedByte',
       });
-      
+
     // Render RTT for debugging
     /*
     readback.compose({
       zTest: false,
     });
     //*/
-    
+
     // Query readback buffer
     var none     = [-1, -1];
     var mouse    = none;
     var hovered  = none;
-    
+
     var getIndexAt = function (x, y) {
 		var data = readback.get('data');
 		//console.log(data);
 		if (!data) {
 			return none;
 		}
-		
+
 		x = Math.round(x * scale);
 		y = Math.round(y * scale);
-		
+
 		var w = readback.get('width');
 		var h = readback.get('height');
-		
+
 		var o = (x + w * (h - y)) * 4;
 		var r = data[o];
 		var g = data[o + 1];
 		var a = data[o + 3];
-		
+
 		return (a == 0) ? [r, g] : none;
 	};
 
@@ -168,15 +168,15 @@
 		mouse = [x=event.offsetX * window.devicePixelRatio, y=event.offsetY * window.devicePixelRatio];
 		x = Math.round(x * scale);
 		y = Math.round(y * scale);
-		
+
 		var data = readback.get('data');
 		var w = readback.get('width');
 		var h = readback.get('height');
 		var o = (x + w * (h - y)) * 4;
-		
+
 		//console.log(o + ': ' + data[o] + ' ' + data[o+1] + ' ' + data[o+2]);
     });
-    
+
     three.on('post', function () {
       hovered = getIndexAt(mouse[0], mouse[1]);
     });

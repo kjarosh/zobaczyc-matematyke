@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Complex Algebra</title>
 	<script src="../../jslib/jquery.min.js"></script>
-	<script src="../../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../../jslib/mathbox2/mathbox.min.css"/>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>

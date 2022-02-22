@@ -1,15 +1,15 @@
 (function complexSubtraction(idPrefix){
 	var A = [3, 1];
 	var B = [1, 2];
-	
+
 	var colorA = Config.colors.blue;
 	var colorB = Config.colors.orange;
-	
+
 	present = presentation.cartesian({
 		range: [[-2, 4], [-3, 3], [-5,5]],
 		scale: [1, 1, 1],
 	});
-	
+
 	// slide 2: show A and B ====================================================================
 	var slide = present.slide({
 		late: 4
@@ -28,7 +28,7 @@
 				width: 3,
 				detail: 100
 			}).grid({
-				width: 1,  
+				width: 1,
 				divideX: 5,
 				divideY: 5,
 			})
@@ -37,7 +37,7 @@
 				id: idPrefix + 'A',
 				data: A,
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).point({
 				size: 12,
 				color: colorA
@@ -53,12 +53,12 @@
 				depth: .5,
 				zIndex: 1,
 			})
-			
+
 			.array({
 				id: idPrefix + 'B',
 				data: B,
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).point({
 				size: 12,
 				color: colorB
@@ -75,13 +75,13 @@
 				depth: .5,
 				zIndex: 1,
 			})
-			
+
 			// -B
 			.array({
 				id: idPrefix + 'mB',
 				data: [-B[0], -B[1]],
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).text({
 				font: Config.mathFont,
 				style: Config.mathFontStyleVar,
@@ -95,7 +95,7 @@
 				depth: .5,
 				zIndex: 1,
 			})
-			
+
 			.step({
 				target: '#' + idPrefix + 'A + point',
 				script: [
@@ -103,7 +103,7 @@
 					{ size: 0 }
 				]
 			})
-			
+
 			.step({
 				target: '#' + idPrefix + 'B + point',
 				script: [
@@ -111,7 +111,7 @@
 					{ size: 0 }
 				]
 			})
-			
+
 			.step({
 				target: '#' + idPrefix + 'Blabel',
 				pace: 0.1,
@@ -122,7 +122,7 @@
 				],
 				realtime: true,
 			})
-			
+
 			.step({
 				target: '#' + idPrefix + 'mBlabel',
 				pace: 0.1,
@@ -148,7 +148,7 @@
 				id: idPrefix + 'vecA',
 				data: [0, 0, 0.99 * A[0], 0.99 * A[1], A[0], A[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -156,12 +156,12 @@
 				stroke: 'solid',
 				end: true,
 			})
-			
+
 			.array({
 				id: idPrefix + 'vecB',
 				data: [0, 0, 0.99 * B[0], 0.99 * B[1], B[0], B[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -185,7 +185,7 @@
 				id: idPrefix + 'vecB2',
 				data: [0, 0, -0.99 * B[0], -0.99 * B[1], -B[0], -B[1]],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				id: idPrefix + 'vecB2line',
 				size: 4,
@@ -209,7 +209,7 @@
 				id: idPrefix + 'vecAB',
 				data: [0, 0, 0.99 * (A[0] - B[0]), 0.99 * (A[1] - B[1]), (A[0] - B[0]), (A[1] - B[1])],
 				channels: 2,
-				length: 3,
+        width: 3,
 			}).line({
 				size: 4,
 				width: 5,
@@ -218,12 +218,12 @@
 				end: true,
 				zBias: 4,
 			})
-			
+
 			.array({
 				id: idPrefix + 'AB',
 				data: [A[0] - B[0], A[1] - B[1]],
 				channels: 2,
-				length: 1,
+        width: 1,
 			}).text({
 				font: Config.mathFont,
 				style: Config.mathFontStyleVar,

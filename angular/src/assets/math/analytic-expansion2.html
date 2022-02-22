@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Function &#8477;&#178;&#8594;&#8477;</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
@@ -54,9 +54,9 @@ var func1 = function(x, y){
 	if(x == 0 && y == 0){
 		return range;
 	}
-	
+
 	if(x == 0 && y == 0) return -range;
-	
+
 	return Math.log(x*x+y*y)/20 + 0.2
 		+ hill(1, 1)(x, y) + hill(-0.5, -1)(x, y) + hill(-2, 2)(x, y);
 }
@@ -65,7 +65,7 @@ var func = function(x, y){
 	var x2 = x*x;
 	var ya = 1+y;
 	var yb = 1-y;
-	
+
 	return (Math.log(x*x+ya*ya)-Math.log(x*x+yb*yb))/5;
 }
 
@@ -95,10 +95,10 @@ view.area({
 	axes: [1, 3],
 	expr: function(emit, x, y, i, j, time){
 		var z = func(x, y);
-		
+
 		z = Math.min(z, rangez);
 		z = Math.max(z, -rangez);
-		
+
 		emit(x, z, y);
 	},
 	items: 1,
@@ -126,7 +126,7 @@ function radius(px, py){
 		var y = py - pole[1];
 		distancesSquare.push(x*x+y*y);
 	}
-	
+
 	return Math.sqrt(distancesSquare.min());
 }
 
@@ -153,24 +153,24 @@ view
 				if(position == null){
 					fillPosition();
 				}
-				
+
 				r *= radius(position.x, position.z);
-				
+
 				var x = r*Math.cos(t) + position.x;
 				var y = r*Math.sin(t) + position.z;
-				
+
 				var z = func(x, y);
-				
+
 				z = Math.min(z, rangez);
 				z = Math.max(z, -rangez);
-				
+
 				r = Math.sqrt(x*x+y*y);
 				if(x==0 && y==0){
 					t = 0;
 				}else{
 					t = Math.atan2(y, x);
 				}
-				
+
 				emit(t, r, z);
 			},
 			items: 1,

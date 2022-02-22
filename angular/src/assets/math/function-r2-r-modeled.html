@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Modeled function &#8477;&#178;&#8594;&#8477;</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
@@ -59,15 +59,15 @@ Config.registerPresentation(present);
 function func(x, y){
 	//y /= -8;
 	//return y*x*x/20+(y*y+1)/5*x+y*2 + 2;
-	
+
 	//return -1/(x - 5) * (Math.sin(y) + 1.2) * 2;
-	
+
 	//return Math.sin(y) * Math.cosh(x) / 15 + 2;
-	
+
 	//return Math.sin(y) * Math.exp(x) / 15;
-	
+
 	return Math.log(x + 6)*Math.sin(y)*x/6 + 2;
-	
+
 	//return Math.atan(x)*(x + 5)*Math.sin(y)/8;
 }
 
@@ -115,14 +115,14 @@ present.slide({
 					to: 2,
 					pace: 3
 				})
-				
+
 				.axis({
 					id: 'vaxis',
 					axis: 1,
 					width: 2,
 					detail: 100,
 				})
-				
+
 				.grid({
 					id: 'vgrid',
 					axes: [1, 2],
@@ -131,15 +131,15 @@ present.slide({
 					divideY: 10,
 					rangeY: [-1, 5]
 				})
-				
+
 				.interval({
 					expr: function(emit, x, i, time){
 						if(cstransformp == null){
 							cstransformp = view.select('#cstransform').get('position');
 						}
-						
+
 						param = cstransformp.z;
-						
+
 						emit(x, func(x, param), param);
 					},
 					channels: 2,
@@ -151,7 +151,7 @@ present.slide({
 				})
 			.end()
 		.end()
-		
+
 		.axis({
 			id: 'flataxis1',
 			axis: 3,
@@ -173,7 +173,7 @@ present.slide({
 			color: Config.colors.light_gray,
 			zOrder: 3
 		})
-		
+
 		.area({
 			expr: function(emit, x, y, i, j, time){
 				emit(x, func(x, y), y);
@@ -191,7 +191,7 @@ present.slide({
 			width: 2
 		})
 	.end()
-	
+
 	.step({
 		target: '#flatgrid',
 		script: [

@@ -4,16 +4,16 @@
 	<meta charset="utf-8"/>
 	<title>Function &#8477;&#178;&#8594;&#8477;</title>
 	<script src="../jslib/jquery.min.js"></script>
-	<script src="../jslib/mathbox2/mathbox-bundle.min.js"></script>
+	<script src="../jslib/mathbox2/mathbox-bundle.js"></script>
 	<link rel="stylesheet" href="../jslib/mathbox2/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
-  
+
   <!--
     Recreation of https://twitter.com/beesandbombs/status/654702843723563009
   -->
-  
+
   <script type="application/glsl" id="rotateX">
     uniform float seek;
 
@@ -24,11 +24,11 @@
 
     vec4 rotateX(vec4 xyzw, inout vec4 stpq) {
       float theta = ease(xyzw.x * .25 + seek) * 1.570796;
-      
+
       float s = sin(theta);
       float c = cos(theta);
       mat2  m2    = mat2(c, s, -s, c);
-      
+
       return vec4(xyzw.x, m2 * xyzw.yz, xyzw.w);
     }
   </script>
@@ -42,11 +42,11 @@
 
     vec4 rotateY(vec4 xyzw, inout vec4 stpq) {
       float theta = ease(xyzw.y * .25 + seek) * 1.570796;
-      
+
       float s = sin(theta);
       float c = cos(theta);
       mat2  m2    = mat2(c, s, -s, c);
-      
+
       vec2 zx = m2 * xyzw.zx;
       return vec4(zx.t, xyzw.y, zx.s, xyzw.w);
     }
@@ -61,17 +61,17 @@
 
     vec4 rotateZ(vec4 xyzw, inout vec4 stpq) {
       float theta = ease(xyzw.z * .25 + seek) * 1.570796;
-      
+
       float s = sin(theta);
       float c = cos(theta);
       mat2  m2    = mat2(c, s, -s, c);
-      
+
       return vec4((m2 * xyzw.yx).yx, xyzw.zw);
     }
   </script>
   <script>
     var ortho = 10000;
-    
+
     var mathbox = mathBox({
       plugins: ['core', 'controls', 'cursor', 'mathbox'],
       controls: {
@@ -114,9 +114,9 @@
         height: 17,
         depth:  17,
       });
-    
+
     var xf = mathbox;
-    
+
     // Rotate Z axis
     xf =
       xf
@@ -181,7 +181,7 @@
     xf.group().resample({ shader: null, height: 9, depth: 9 }).line({ color: '#fff', width: 4 });
     xf.group().transpose({ order: 'yzxw' }).resample({ shader: null, height: 9, depth: 9 }).line({ color: '#fff', width: 4 });
     xf.group().transpose({ order: 'zxyw' }).resample({ shader: null, height: 9, depth: 9 }).line({ color: '#fff', width: 4 });
-    
+
   </script>
 </body>
 </html>
