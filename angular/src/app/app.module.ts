@@ -17,6 +17,7 @@ import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limit
 import {P6MobiusComponent} from './pages/p6-mobius/p6-mobius.component';
 import {P7TaylorSeriesComponent} from './pages/p7-taylor-series/p7-taylor-series.component';
 import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/p8-analytic-continuation.component';
+import { P9ComplexIntegralComponent } from './pages/p9-complex-integral/p9-complex-integral.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/
     P6MobiusComponent,
     P7TaylorSeriesComponent,
     P8AnalyticContinuationComponent,
+    P9ComplexIntegralComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/
     P6MobiusComponent,
     P7TaylorSeriesComponent,
     P8AnalyticContinuationComponent,
+    P9ComplexIntegralComponent,
   ],
 })
 export class AppModule {

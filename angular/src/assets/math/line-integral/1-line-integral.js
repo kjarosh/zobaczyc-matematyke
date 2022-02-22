@@ -5,12 +5,12 @@ var functionParam = 0;
 		range: [[-2, 2], [-2, 2], [-2, 2]],
 		scale: [1, 1, 1],
 	});
-	
-	
+
+
 	function func(x, y){
 		return 1/(x*x*x*x+1)/(y*y*y*y+1)*Math.sin(x)*Math.sin(y) + 0.5;
 	}
-	
+
 	var path = {
 		range: [-1, 1],
 		func: function(t){
@@ -20,12 +20,12 @@ var functionParam = 0;
 			return t;
 		},
 	};
-	
+
 	var resolution = 24;
 	var curveResolution = 64;
 	var color = Config.colors.blue;
 	var vectorsNum = 20;
-	
+
 	present.slide({
 		late: 4
 	})
@@ -39,7 +39,7 @@ var functionParam = 0;
 				{ position: [-3, 2.3, -1.2] },
 			]
 		})
-		
+
 		.reveal({
 			delayEnter: 1,
 			duration: 1,
@@ -52,7 +52,7 @@ var functionParam = 0;
 				zOrder: 3
 			})
 		.end();
-	
+
 	present.slide({
 		late: 3
 	})
@@ -78,7 +78,7 @@ var functionParam = 0;
 				zOrder: 1,
 			})
 		.end()
-		
+
 		.step({
 			target: '#func',
 			pace: 1.5,
@@ -103,14 +103,14 @@ var functionParam = 0;
 				range: path.range,
 				expr: function(emit, t, i, time){
 					t = path.normalize(t);
-					
+
 					var z = path.func(t);
 					var x = z[0];
 					var y = z[1];
 					emit(x, func(x, y), y);
 				},
 				channels: 3,
-				length: curveResolution,
+				width: curveResolution,
 				items: 1,
 				live: false
 			}).line({
@@ -119,10 +119,10 @@ var functionParam = 0;
 				zIndex: 2,
 			})
 		.end();
-	
+
 	var pathRange0Val = path.func(path.range[0]);
 	var pathRange1Val = path.func(path.range[1]);
-	
+
 	// slide 3: projection ===========================================================================
 	present.slide({
 		late: 1
@@ -136,14 +136,14 @@ var functionParam = 0;
 				range: path.range,
 				expr: function(emit, t, i, time){
 					t = path.normalize(t);
-					
+
 					var z = path.func(t);
 					var x = z[0];
 					var y = z[1];
 					emit(x, 0, y);
 				},
 				channels: 3,
-				length: curveResolution,
+        width: curveResolution,
 				items: 1,
 				live: false
 			}).line({
@@ -151,13 +151,13 @@ var functionParam = 0;
 				width: 2,
 				zIndex: 2,
 			})
-			
+
 			// projection
 			.interval({
 				range: path.range,
 				expr: function(emit, t, i, time){
 					t = path.normalize(t);
-					
+
 					var z = path.func(t);
 					var x = z[0];
 					var y = z[1];
@@ -165,7 +165,7 @@ var functionParam = 0;
 					emit(x, 0, y);
 				},
 				channels: 3,
-				length: vectorsNum,
+        width: vectorsNum,
 				items: 2,
 				live: false
 			}).vector({
@@ -176,7 +176,7 @@ var functionParam = 0;
 				zOrder: 4,
 			})
 		.end()
-		
+
 		.step({
 			target: '#vectorProjection',
 			script: [
@@ -202,13 +202,13 @@ var functionParam = 0;
 				rangeY: [0, 1],
 				expr: function(emit, u, v, i, j, time){
 					u = path.normalize(u);
-					
+
 					var z = path.func(u);
 					var x = z[0];
 					var y = z[1];
-					
+
 					z = func(x, y);
-					
+
 					if(v == 1){
 						emit(x, 0, y);
 					}else{
@@ -224,15 +224,15 @@ var functionParam = 0;
 				zOrder: 2,
 				opacity: 0.7,
 			})
-			
+
 			.array({
 				items: 2,
-				length: 2,
+        width: 2,
 				channels: 3,
 				data: [
 					pathRange0Val[0], 0, pathRange0Val[1],
 					pathRange1Val[0], 0, pathRange1Val[1],
-					
+
 					pathRange0Val[0], func(pathRange0Val[0], pathRange0Val[1]), pathRange0Val[1],
 					pathRange1Val[0], func(pathRange1Val[0], pathRange1Val[1]), pathRange1Val[1],
 				],

@@ -12,6 +12,7 @@ import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limit
 import {P6MobiusComponent} from './pages/p6-mobius/p6-mobius.component';
 import {P7TaylorSeriesComponent} from './pages/p7-taylor-series/p7-taylor-series.component';
 import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/p8-analytic-continuation.component';
+import {P9ComplexIntegralComponent} from './pages/p9-complex-integral/p9-complex-integral.component';
 
 const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [0, P0TocComponent],
@@ -23,6 +24,7 @@ const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [6, P6MobiusComponent],
   [7, P7TaylorSeriesComponent],
   [8, P8AnalyticContinuationComponent],
+  [9, P9ComplexIntegralComponent],
 ]);
 
 @Component({

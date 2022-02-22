@@ -4,33 +4,33 @@
 		range: [[-20, 20], [-20, 20], [-20, 20]],
 		scale: [10, 10, 10],
 	});
-	
-	
+
+
 	function func(x){
 		return x*x*x-x+1;
 	}
-	
+
 	function func2(x){
 		x /= 2;
 		return 2*(x*x*x-x);
 	}
-	
+
 	function func3(x){
 		return 1/x/x;
 	}
-	
+
 	function func4(x){
 		return 1/Math.sqrt(x);
 	}
-	
+
 	function func5(x){
 		x /= 3;
 		return Math.sin(1/x);
 	}
-	
+
 	var resolution = 128;
 	var rectangles = 128;
-	
+
 	present.slide({
 		late: 10
 	})
@@ -52,7 +52,7 @@
 				width: 0.8,
 			})
 		.end();
-	
+
 	present.slide({
 		late: 1,
 	})
@@ -65,13 +65,13 @@
 					emit(x, func(x));
 				},
 				channels: 2,
-				length: resolution,
+				width: resolution,
 			}).line({
 				color: Config.colors.orange,
 				width: 2,
 				zBias: 8,
 			});
-	
+
 	present.slide({
 		late: 0
 	})
@@ -97,9 +97,9 @@
 				width: 2,
 				opacity: 0.5,
 			})
-			
+
 			.array({
-				length: 1,
+        width: 1,
 				channels: 2,
 				data: [-0.5, 0],
 			}).text({
@@ -115,9 +115,9 @@
 				color: Config.colors.green,
 				size: 8,
 			})
-			
+
 			.array({
-				length: 1,
+        width: 1,
 				channels: 2,
 				data: [1, 0],
 			}).text({
@@ -133,7 +133,7 @@
 				color: Config.colors.red,
 				size: 8,
 			})
-			
+
 			.step({
 				target: 'camera',
 				pace: 1,
@@ -143,11 +143,11 @@
 				],
 			})
 		.end();
-	
+
 	// =================================================================================
-	
-	
-	
+
+
+
 	present.slide({
 		late: 1,
 	})
@@ -161,13 +161,13 @@
 					emit(x, func2(x));
 				},
 				channels: 2,
-				length: resolution*2,
+        width: resolution*2,
 			}).line({
 				color: Config.colors.orange,
 				width: 3,
 				zBias: 8,
 			});
-	
+
 	present.slide({
 		late: 0
 	})
@@ -193,7 +193,7 @@
 				width: 2,
 				opacity: 0.5,
 			})
-			
+
 			.area({
 				rangeX: [0, 1.5],
 				rangeY: [0, 1],
@@ -213,9 +213,9 @@
 				width: 2,
 				opacity: 0.5,
 			})
-			
+
 			.array({
-				length: 1,
+        width: 1,
 				channels: 2,
 				data: [-1, 0.3],
 			}).text({
@@ -228,9 +228,9 @@
 				offset: [0, 0],
 				zIndex: 1,
 			})
-			
+
 			.array({
-				length: 1,
+        width: 1,
 				channels: 2,
 				data: [1, -0.3],
 			}).text({
@@ -244,9 +244,9 @@
 				zIndex: 1,
 			})
 		.end();
-	
+
 	// =================================================================================
-	
+
 	present.slide({
 		late: 1,
 	})
@@ -260,13 +260,13 @@
 					emit(x, func3(x));
 				},
 				channels: 2,
-				length: resolution*4,
+        width: resolution*4,
 			}).line({
 				color: Config.colors.orange,
 				width: 3,
 				zBias: 8,
 			});
-	
+
 	present.slide({
 		late: 0
 	})
@@ -292,11 +292,11 @@
 				width: 2,
 				opacity: 0.5,
 			})
-			
+
 		.end();
-	
+
 	// =================================================================================
-	
+
 	present.slide({
 		late: 1,
 	})
@@ -310,13 +310,13 @@
 					emit(x, func4(x));
 				},
 				channels: 2,
-				length: resolution*4,
+        width: resolution*4,
 			}).line({
 				color: Config.colors.orange,
 				width: 3,
 				zBias: 8,
 			});
-	
+
 	present.slide({
 		late: 0
 	})
@@ -343,11 +343,11 @@
 				width: 2,
 				opacity: 0.5,
 			})
-			
+
 		.end();
-	
+
 	// =================================================================================
-	
+
 	present.slide({
 		late: 1,
 	})
@@ -362,13 +362,13 @@
 					emit(x, func5(x));
 				},
 				channels: 2,
-				length: resolution*40,
+        width: resolution*40,
 			}).line({
 				color: Config.colors.orange,
 				width: 3,
 				zBias: 8,
 			});
-	
+
 	present.slide({
 		late: 0
 	})
