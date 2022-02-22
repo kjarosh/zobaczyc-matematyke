@@ -2,19 +2,18 @@
 
 @presentHeight: 600px;
 div.present {
-  margin: 20px 0px 50px 0px;
-  padding: 0px;
+  margin: 20px 0 50px 0;
+  padding: 0;
   width: 100%;
   height: @presentHeight;
   background-color: white;
-  //box-shadow: 0px 0px 30px #eeeeee;
   border: 1px solid #eeeeee;
-  border-width: 1px 0px 1px 0px;
+  border-width: 1px 0 1px 0;
 
   h4 {
     font-size: 20px;
-    margin: 0px 0px 10px 0px;
-    padding: 0px;
+    margin: 0 0 10px 0;
+    padding: 0;
   }
 
   .present-canvas {
@@ -22,10 +21,7 @@ div.present {
     float: left;
     width: 60%;
     height: 100%;
-
-    //border-width: 0px 1px 0px 0px;
-    border-width: 0px;
-    border-color: @theme-border;
+    border-width: 0;
   }
 
   div.slide-text {
@@ -43,8 +39,6 @@ div.present {
     }
 
     div.slide {
-      //display: none;
-
       br {
         display: block;
         margin: 20px 0;
@@ -53,15 +47,10 @@ div.present {
       }
     }
 
-    //div.slide[data-slide~="1"] {
-    //  display: block;
-    //}
-
     div.slide-buttons {
       @arrowMargin: 20px;
       position: absolute;
       bottom: 25px;
-      width: calc(100% - 50px);
       margin-top: auto;
       height: 50px;
       width: 3*50px + 2*@arrowMargin;
@@ -95,9 +84,7 @@ div.present {
       }
 
       .disabled {
-        filter: gray;
         filter: grayscale(1);
-        -webkit-filter: grayscale(1);
         cursor: default !important;
       }
     }
@@ -136,7 +123,6 @@ div.present-canvas.not-playing {
     margin: auto;
 
     text-align: center;
-
     font-family: 'Merriweather', Helvetica, Arial, sans-serif;
   }
 }

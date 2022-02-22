@@ -1,14 +1,4 @@
 
-/*(function loadFont(){
-	var head  = document.getElementsByTagName('head')[0];
-	var link  = document.createElement('link');
-	link.rel  = 'stylesheet';
-	link.type = 'text/css';
-	link.href = '../../font/lm-math.css';
-	link.media = 'all';
-	head.appendChild(link);
-})();*/
-
 function emitBounded(emit, x, y, ymax, ymin, maxerror){
 	if(y >= ymin && y <= ymax){
 		emit(x, y);
@@ -53,48 +43,48 @@ var Config = {
 		blue: '#1a8cff',
 		green: '#2eb82e',
 		orange: '#f29e0c',
-		
+
 		light_gray: '#cccccc',
 		gray: '#666666',
 		black: '#000000',
 		white: '#ffffff',
-		
+
 		pink: '#99004d',
 	},
-	
+
 	zeroIndex: false,
-	
+
 	present: null,
 	registerPresentation: function(present){
 		this.present = present;
 	},
 	registerInsert: function(f){
 		if(!f) f = function(){};
-		
+
 		if(this.debug){
 			window.onkeydown = (function(t, f){ return function(e){
 				var key = e.keyCode ? e.keyCode : e.which;
-				
+
 				if(key == 45){
 					t.nextSlide();
 				}else if(key == 46){
 					f();
 				}
-				
+
 			}; })(this, f);
 		}
 	},
-	
+
 	nextSlide: function(){
 		var present = this.present;
-		
+
 		if(!present){
 			console.error('Presentation is not registered');
 			return;
 		}
-		
+
 		var length = present.get('length');
-		
+
 		if(present.get('index') == present.get('length')){
 			if(this.zeroIndex){
 				present.set('index', 0);
@@ -104,43 +94,43 @@ var Config = {
 		}else{
 			present.set('index', present.get('index') + 1);
 		}
-		
+
 		console.log('Current slide: ' + present.get('index') + '/' + length);
 	},
 	prevSlide: function(){
 		var present = this.present;
-		
+
 		if(!present){
 			console.error('Presentation is not registered');
 			return;
 		}
-		
+
 		if(present.get('index') == 1){
 			present.set('index', present.get('length'));
 		}else{
 			present.set('index', present.get('index') - 1);
 		}
-		
+
 		console.log('Current slide: ' + present.get('index'));
 	},
 	slideNumber: function(){
 		var present = this.present;
-		
+
 		if(!present){
 			console.error('Presentation is not registered');
 			return;
 		}
-		
+
 		return present.get('index');
 	},
 	totalSlides: function(){
 		var present = this.present;
-		
+
 		if(!present){
 			console.error('Presentation is not registered');
 			return;
 		}
-		
+
 		return present.get('length');
 	},
 	onLoadEvents: [],
@@ -172,6 +162,6 @@ function getUrlVars() {
 	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value){
 		vars[key] = value;
 	});
-	
+
 	return vars;
 }

@@ -15,13 +15,8 @@
 a.pageinfo {
 	display: block;
 
-	margin-top: 30px;
-	margin-bottom: 30px;
-
-	margin-left: @content-margin;
-	margin-right: @content-margin;
-
-	padding-left: 30px;
+  margin: 30px @content-margin;
+  padding-left: 30px;
 
 	font-size: 1.1em;
 	font-weight: normal;
@@ -32,14 +27,12 @@ a.pageinfo {
 }
 
 html, body {
-	margin: 0px;
-	padding: 0px;
-
-	//background-image: url(../img/bg.png);
+	margin: 0;
+	padding: 0;
 }
 
 p {
-	text-indent: none;
+	text-indent: 0;
 }
 
 em {
@@ -72,9 +65,9 @@ blockquote.cite {
 	margin: 10px;
 
 	p {
-		text-indent: 0px;
-		padding: 0px;
-		margin: 0px;
+		text-indent: 0;
+		padding: 0;
+		margin: 0;
 	}
 
 	span.author {
@@ -93,7 +86,7 @@ blockquote.cite {
 #main-nav {
 	.auto-width();
 
-	margin: 30px auto 0px auto;
+	margin: 30px auto 0 auto;
 	color: white;
 
 	border-radius: 5px;
@@ -101,8 +94,8 @@ blockquote.cite {
 	min-height: 200px;
 
 	h1 {
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 		font-size: 330%;
 	}
 
@@ -135,14 +128,14 @@ blockquote.cite {
 }
 
 #container {
-	margin: 0px 0px 100px 0px;
-	padding: 0px;
+	margin: 0 0 100px 0;
+	padding: 0;
 }
 
 .content {
 	.auto-width();
 
-	margin: 0px auto 0px auto;
+	margin: 0 auto 0 auto;
 
 	//background-color: white;
 	//border: 1px solid @theme-border;
@@ -154,8 +147,8 @@ blockquote.cite {
 		margin: 20px @content-margin 20px @content-margin;
 
 		ul, ol {
-			margin-left: 0px;
-			margin-right: 0px;
+			margin-left: 0;
+			margin-right: 0;
 		}
 
 		&.next-page, &.prev-toc {
@@ -187,12 +180,8 @@ blockquote.cite {
 	}
 
 	ul, ol{
-		margin-left: @content-margin;
-		margin-right: @content-margin;
-		margin-top: 20px;
-		margin-bottom: 20px;
-
-		padding: 0px 0px 0px 30px;
+    margin: 20px @content-margin;
+    padding: 0 0 0 30px;
 	}
 
 	aside.right {
@@ -204,7 +193,7 @@ blockquote.cite {
 
 	h2 {
 		font-size: 2.2em;
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	h3 {
@@ -237,17 +226,17 @@ blockquote.cite {
 		padding-left: @content-margin;
 		padding-right: @content-margin;
 		width: 100%;
-		border-spacing: 0px;
+		border-spacing: 0;
 		table-layout: fixed;
 
 		td, th {
 			padding: 15px;
-			margin: 0px;
+			margin: 0;
 		}
 
 		td {
 			border: 1px solid @theme-border;
-			border-width: 1px 0px 0px 0px;
+			border-width: 1px 0 0 0;
 		}
 
 		td.number, th.number-header {
@@ -291,39 +280,34 @@ h1 {
 footer {
 	.auto-width();
 	padding: 50px @content-margin 20px @content-margin;
-	margin: 0px auto 0px auto;
+	margin: 0 auto 0 auto;
 
 	div.copyright-notice {
 		text-align: center;
 		border: 1px solid @theme-border;
-		border-width: 1px 0px 0px 0px;
-		padding: 10px 0px 0px 0px;
+		border-width: 1px 0 0 0;
+		padding: 10px 0 0 0;
 	}
 }
 
 ol.toc {
 	h4 {
 		font-size: 1.1em;
-		margin: 0px;
+		margin: 0;
 		font-weight: normal;
 	}
 
 	p {
-		margin: 5px 0px 10px 20px;
-		padding: 0px;
+		margin: 5px 0 10px 20px;
+		padding: 0;
 		color: gray;
 	}
 
 	li p {
-		-o-transition: .5s;
-		-ms-transition: .5s;
-		-moz-transition: .5s;
-		-webkit-transition: .5s;
-		transition: .5s;
+		transition: .3s;
 	}
 
 	li:hover p {
 		color: inherit;
 	}
 }
-
