@@ -8,6 +8,7 @@ import {P2IntroComponent} from './pages/p2-intro/p2-intro.component';
 import {PageHostDirective} from './directives/page-host.directive';
 import {P3SeqSphereComponent} from './pages/p3-seq-sphere/p3-seq-sphere.component';
 import {P4Func3dComponent} from './pages/p4-func3d/p4-func3d.component';
+import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limits-derivative.component';
 
 const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [0, P0TocComponent],
@@ -15,6 +16,7 @@ const PAGES: Map<number, Type<PageTemplate>> = new Map([
   [2, P2IntroComponent],
   [3, P3SeqSphereComponent],
   [4, P4Func3dComponent],
+  [5, P5LimitsDerivativeComponent],
 ]);
 
 @Component({

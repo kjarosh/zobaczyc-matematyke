@@ -2,7 +2,7 @@
 // sin(z)/z
 function sinc(x, y){
 	var r2 = x*x + y*y;
-	
+
 	return [
 		(x*Math.sin(x)*Math.cosh(y)+y*Math.cos(x)*Math.sinh(y))/r2,
 		(x*Math.cos(x)*Math.sinh(y)-y*Math.sin(x)*Math.cosh(y))/r2
@@ -14,12 +14,12 @@ function sinc(x, y){
 		range: [[-10, 10], [-10, 10], [-10, 10]],
 		scale: [1, 1, 1],
 	});
-	
+
 	var scale = 3;
-	
+
 	function complexLimit(func, point, part, resolution, rangez){
 		if(!rangez) rangez = 10;
-		
+
 		present.slide({
 			late: 1,
 		})
@@ -37,7 +37,7 @@ function sinc(x, y){
 					zIndex: 1,
 					color: 'black',
 				})
-				
+
 				/*.axis({
 					axis: 1,
 					width: 2,
@@ -52,7 +52,7 @@ function sinc(x, y){
 					divideX: 10,
 					divideY: 10,
 				})*/
-				
+
 				.area({
 					rangeX: [-10, 10],
 					rangeY: [-10, 10],
@@ -60,7 +60,7 @@ function sinc(x, y){
 						var z = scale*func(x/scale, y/scale)[part];
 						z = Math.max(z, -rangez);
 						z = Math.min(z, rangez);
-						
+
 						emit(x, z, y);
 					},
 					height: resolution,
@@ -71,22 +71,22 @@ function sinc(x, y){
 					lineX: true,
 					lineY: true,
 				});
-		
+
 		present.slide({
-			
+
 		}).reveal({
 			duration: 1,
 		})
 			.interval({
-				length: 32,
+				width: 32,
 				range: [1, 10],
 				expr: function(emit, n, i, time){
 					var pow = Math.pow(2, n);
-					
+
 					var x = 15*Math.sin(time)/pow + point[0];
 					var y = 15*Math.cos(time)/pow + point[1];
 					var z = scale*func(x/scale, y/scale)[part];
-					
+
 					emit(x, z, y);
 				},
 			}).point({
@@ -94,26 +94,26 @@ function sinc(x, y){
 				color: Config.colors.orange,
 				zBias: 40,
 			})
-			
+
 			.array({
 				channels: 3,
 				items: 1,
-				length: 2,
+        width: 2,
 			}, {
 				data: function(time){
 					var pow = Math.pow(2, 20);
-					
+
 					var x = 15*Math.sin(time)/pow + point[0];
 					var y = 15*Math.cos(time)/pow + point[1];
 					var z = scale*func(x/scale, y/scale)[part];
-					
+
 					if(Math.abs(z) > rangez){
 						return [
 							point[0], rangez, point[1],
 							point[0], -rangez, point[1]
 						];
 					}
-					
+
 					return [
 						point[0], z, point[1],
 						point[0], z, point[1]
@@ -129,20 +129,20 @@ function sinc(x, y){
 				zBias: 20,
 			});
 	}
-	
+
 	complexLimit(sinc, [0, 0], 0, 64, 20);
-	
+
 	complexLimit(func5, [0, 0], 1, 64);
-	
+
 	complexLimit(func9, [0, 0], 1, 64);
-	
+
 	complexLimit(function(x, y){
 		if(x == 0 && y == 0){
 			return [0, 0];
 		}
-		
+
 		var z = func6(x, y);
 		return [-z[0], -z[1]];
 	}, [0, 0], 1, 65, 30);
-	
+
 })();
