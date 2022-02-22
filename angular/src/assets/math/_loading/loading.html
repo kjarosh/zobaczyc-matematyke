@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Loading</title>
+	<script src="../../mathbox/mathbox-bundle.js"></script>
+	<link rel="stylesheet" href="../../mathbox/mathbox.min.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<style>
+	body {
+		cursor: default !important;
+		pointer-events: none;
+	}
+
+	canvas {
+		width: 100% !important;
+		height: 100% !important;
+		margin: 0px;
+		padding: 0px;
+	}
+	</style>
+</head>
+<body>
+<script type="application/javascript" src="../config.js"></script>
+<script type="application/javascript" src="../math-lib.js"></script>
+<script>
+var mathbox = mathBox({
+	plugins: ['core', 'controls', 'cursor'],
+	controls: {
+		klass: THREE.OrbitControls,
+		parameters: {
+			//noZoom: true
+		}
+	},
+	camera: {
+		fov: 30
+	},
+});
+three = mathbox.three;
+
+//three.camera.position.set(-1, 1, 6);
+three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
+
+var view = mathbox.set('focus', 4).cartesian({
+	range: [[-1, 1], [-1, 1], [-1, 1]],
+	scale: [.5, .5, .5]
+});
+
+var camera = view.camera({
+	proxy: true,
+	//position: [0, 0, 3],
+	lookAt: [0, 0, 0],
+}, {
+	position: function(t){
+		var scale = 4;
+
+		var rot = t/4;
+
+		return [scale*2*Math.cos(rot), scale*(Math.sin(t/5)/5 + 1), scale*2*Math.sin(rot)];
+	},
+});
+
+function getRotation(pos, time){
+	return Math.sin(time/10+1)*2*pos+time;
+}
+
+view.polar().area({
+	width: 128, // resolution
+	rangeX: [0, Math.PI],
+
+	height: 25, // items
+	rangeY: [0, 1],
+	expr: function(emit, theta, z, i, j, time){
+		z = (z + time/40) % 1;
+		z *= 2;
+		z -= 1;
+
+		theta *= Math.cos(time/5)/4 + 3/4;
+
+		// z is OK
+
+		emit(theta + getRotation(z, time), Math.sqrt(1-z*z), z);
+	}
+}).line({
+	color: Config.colors.blue,
+	width: 3,
+});
+</script>
+
+</body>
+</html>

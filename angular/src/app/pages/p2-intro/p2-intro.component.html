@@ -1,0 +1,181 @@
+<div class="content">
+  <p class="prev-toc">
+    <a href="?page=0">Spis treści</a>
+  </p>
+
+  <h2>Wstęp do liczb zespolonych</h2>
+
+  <p>
+    Jak zapewne wszyscy wiemy, każdy wielomian kwadratowy może mieć dwa pierwiastki, jeden
+    lub może nie mieć ich wcale. Jednak możemy zdefiniować pojęcie nowej liczby, dzięki której
+    każdy trójmian kwadratowy będzie mieć co najmniej jeden pierwiastek. Pozwoli nam to pierwiastkować
+    liczby ujemne.
+  </p>
+
+  <h3>Zupełnie nowa liczba</h3>
+
+  <p>
+    Zobaczmy na poniższy wielomian $p(x)$:
+
+    $$p(x)=x^2+1$$
+
+    Nie ma on pierwiastków rzeczywistych, gdyż jest on większy od zera dla każdego $x$. Jednak załóżmy,
+    że jego pierwiastkiem jest liczba $i$:
+
+    $$p(i)=i^2+1=0\implies i^2=-1$$
+
+    Nie wiedząc ile tak naprawdę ona wynosi traktujemy ją jako stałą z pewną bardzo ważną własnością
+    &mdash; podniesiona do kwadratu daje liczbę $-1$ &mdash; $i^2=-1$. Możemy teraz wprowadzić nowe pojęcie: <em>liczbę zespoloną</em> postaci
+
+    {{ '$${\\color{red}{a} }+{\\color{green}{b} }i$$' }}
+
+    gdzie $a$ i $b$ są dowolnymi liczbami rzeczywistymi. Na przykład:
+
+    $$z_1=3+2i,\quad z_2=-4+i,\quad z_3=1-\pi i$$
+  </p>
+
+  <p>
+    Na liczbach zespolonych możemy wykonywać operacje dodawania i odejmowania, np.:
+
+    $$z_1+z_2=3+2i+(-4+i)=-1+i(2+1)=-1+3i$$
+    $$z_1-z_2=3+2i-(-4+i)=3+2i+4-i=7-i$$
+
+    Wynik tych operacji jest również postaci $a+bi$.
+  </p>
+
+</div>
+<app-slides-helper src="assets/math/complex-algebra/complex-algebra-iframe-add.html" [slides]="complexAlgebraSlidesAdd"></app-slides-helper>
+<!--<?php $module = 'add'; include __DIR__ . '/../math/complex-algebra/complex-algebra.php'; ?>-->
+<div class="content">
+
+  <p>
+    Dzięki własności liczby $i$ (takiej, że $i^2=-1$), możemy liczby zespolone mnożyć i dzielić:
+
+    {{ "$$z_1\\cdot z_2=(3+2i)(-4+i)=-12+3i-8i+2\\underbrace{i^2}_{=-1}=-14-5i$$" }}
+
+    {{ "$$\\begin{align}" }}
+    {{ "\\frac{z_1}{z_2}&=\\frac{3+2i}{-4+i}=\\frac{(3+2i)(-4-i)}{(-4+i)(-4-i)}\\\\[10pt]" }}
+    {{ "&=\\frac{-12-3i-8i-2i^2}{16+1}=\\frac{-10-11i}{17}\\\\[10pt]" }}
+    {{ "&=-\\frac{10}{17}-\\frac{11}{17}i" }}
+    {{ "\\end{align}$$" }}
+
+    Wynik <em>każdego</em> działania na takich liczbach będzie postaci $a+bi$.
+    Podczas dzielenia wykorzystujemy fakt, iż $(a-b)(a+b)=a^2-b^2$ lub nieco
+    zmodyfikowaną wersję $(a-bi)(a+bi)=a^2+b^2$.
+  </p>
+
+</div>
+<app-slides-helper src="assets/math/complex-algebra/complex-algebra-iframe-prod.html" [slides]="complexAlgebraSlidesProd"></app-slides-helper>
+<!--<?php $module = 'prod'; include __DIR__ . '/../math/complex-algebra/complex-algebra.php'; ?>-->
+<div class="content">
+
+  <p>
+    Zauważmy, że nie tylko liczba $i$ jest pierwiastkiem
+    równania $p(x)=0$, ale również $-i$:
+
+    {{ '$$p(-i)=(-i)^2+1=(-1)^2i^2+1=i^2+1=0\\quad\\text{bo}\\quad i^2=-1$$' }}}
+
+    Od razu nasuwa się pytanie: jak rozpoznać te dwa pierwiastki? Skąd będziemy wiedzieć którego używać?
+  </p>
+
+  <p>
+    Okazuje się, że nie da się ich rozpoznać, a to którego będziemy używać nie ma znaczenia! Wystarczy
+    nam wiedzieć to, że liczba $i$ jest <em>jednym z</em> pierwiastków wielomianu $p$.
+  </p>
+
+  <p>
+    Zbiór wszystkich takich liczb nazywamy <em>zbiorem liczb zespolonych</em> i oznaczamy
+
+    $$\mathbb C$$
+
+    Oczywiście każda liczba rzeczywista jest również zespolona, dlatego otrzymujemy następujące relacje
+    pomiędzy znanymi nam zbiorami liczb:
+
+    $$\mathbb N \subset \mathbb Z \subset \mathbb Q \subset \mathbb R \subset \mathbb C$$
+
+    gdzie $\mathbb N$ oznacza liczby naturalne, $\mathbb Z$ &mdash; całkowite, $\mathbb Q$ &mdash; wymierne,
+    natomiast $\mathbb R$ rzeczywiste.
+  </p>
+
+  <h3>Porządkowanie liczb zespolonych</h3>
+
+  <aside class="right" style="margin:20px 80px 0 30px">
+    $$2.7 \lt 3.1$$
+    {{ '$$2-3i \\stackrel{?}{\\gt} -3+5i$$' }}
+  </aside>
+
+  <p>
+    W zbiorze liczb zespolonych pojawia się kolejny zasadniczy problem, mianowicie: związany z
+    uporządkowaniem liczb. W zbiorze liczb rzeczywistych porządek jest łatwy i intuicyjny,
+    jednak gdy chodzi o liczby zespolone, okazuje się, że ustalenie jednolitego porządku
+    jest bardzo trudne. Nie przyjęła się żadna relacja porządku w liczbach zespolonych,
+    dlatego nie da się ich porównywać. Natomiast bez problemu można to robić z
+    ich częściami rzeczywistymi, urojonymi, modułami itp. jako że wszystkie te liczby są rzeczywiste.
+  </p>
+
+  <h3>Własności liczb zespolonych</h3>
+
+  <p>
+    Dla każdej liczby zespolonej
+    {{ '$$z={\\color{red}{x} }+{\\color{green}{y} }i$$' }}
+    definiuje się pojęcie <em>części rzeczywistej</em> równej {{ '${\\color{red}{x} }$' }} i <em>części urojonej</em>
+    równej {{ '${\\color{green}{y} }$' }}. Oznacza się to w następujący sposób:
+
+    {{ '$$\\Re(z)={\\color{red}{x} },\\quad\\Im(z)={\\color{green}{y} }$$' }}
+
+    <em>Moduł</em> liczby zespolonej $z$ oznacza odległość od punktu $0$ i zapisuje się go jako:
+
+    {{ '$$|z|=\\sqrt{{\\color{red}{x} }^2+{\\color{green}{y} }^2}$$' }}
+
+    Występuje on najczęściej z <em>argumentem</em> liczby $z$, który jest równy kątowi
+    pomiędzy prostą rzeczywistą, a prostą przechodzącą przez punkt $z$ i $0$.
+  </p>
+
+  <p>
+    Dla liczby zespolonej {{ '$z={\\color{red}{x} }+{\\color{green}{y} }i$' }} definiuje się <em>sprzężenie zespolone</em>, które oznacza się jako
+    $\overline z$ i definiuje w następujący sposób:
+
+    {{ '$$\\overline{z}={\\color{red}{x} }-{\\color{green}{y} }i$$' }}
+
+    Na przykład:
+
+    {{ '$$\\overline{2+4i}=2-4i$$' }}
+    {{ '$$\\overline{1-2i}=1+2i$$' }}
+    {{ '$$\\overline{5}=5$$' }}
+    {{ '$$\\overline{7i}=-7i$$' }}
+  </p>
+
+  <h3>Wielomiany</h3>
+
+  <p>
+    Zbiór liczb zespolonych jest bardzo ważną konstrukcją w matematyce, jest on tak zwanym
+    <em>domknięciem algebraicznym</em> liczb rzeczywistych. Oznacza to, że jest on zbiorem, który
+    zawiera w sobie wszystkie liczby rzeczywiste, i <em>każdy</em> wielomian (oprócz stałej) o współczynnikach
+    z tego zbioru, ma w nim pierwiastek, czyli że każdy wielomian stopnia $n$ ma
+    $n$ pierwiastków zespolonych (niektóre mogą się powtarzać). Bardzo ważnym twierdzeniem
+    jest tak zwana <em>zasada symetrii</em>. Mówi ona między innymi, że:
+  </p>
+
+  <blockquote class="def">
+    Jeśli liczba $z_0$ jest pierwiastkiem pewnego wielomianu o współczynnikach rzeczywistych,
+    to liczba {{ '$\\overline{z_0}$' }} też jest jego pierwiastkiem.
+  </blockquote>
+
+  <p>
+    Na przykład wielomian $w(x)=x^2+4x+5$ ma wyróżnik ujemny $\Delta=-4$.
+    Jednak teraz mogąc pierwiastkować liczby ujemne,
+    jesteśmy w stanie policzyć $\sqrt\Delta$:
+
+    {{ '$$\\sqrt\\Delta = \\sqrt{-4}=i\\sqrt4=2i$$' }}
+
+    Natomiast pierwiastki wielomianu $w(x)$ wynoszą:
+
+    $$w_1=-2+ i,\quad w_2=-2-i$$
+
+    Jak widać, są one sprzężone.
+  </p>
+
+  <p class="next-page">
+    <a href="?page=3">Następna strona: Ciągi zespolone i sfera Riemanna</a>
+  </p>
+</div>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"/>
+  <title>Zmcomplex</title>
+  <base href="/"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { extensions: ["color.js", "AMSmath.js"] },
+      showProcessingMessages: false,
+      messageStyle: "none",
+    });
+
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+      console.error("PROCESSING: " + message);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+      console.error("PARSING: " + message);
+    });
+  </script>
+  <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+          integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"
+          integrity="sha256-wdpU7RX1XIEGCf6v5hatJyV4/DNtLbidb4LmzN8w+Jo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="mathjax-invisible" style="display:none" ngNonBindable>
+  $\definecolor{red}{RGB}{255,0,0}
+  \definecolor{blue}{RGB}{26,140,255}
+  \definecolor{green}{RGB}{46,184,46}
+  \definecolor{orange}{RGB}{242,158,12}
+  \definecolor{light_gray}{RGB}{204,204,204}
+  \definecolor{gray}{RGB}{102,102,102}
+  \definecolor{black}{RGB}{0,0,0}
+  \DeclareMathOperator{\Arg}{Arg}
+  \DeclareMathOperator{\abs}{abs}$
+</div>
+<app-root></app-root>
+</body>
+</html>
