@@ -133,7 +133,7 @@
 							expr: function(emit, x, i, time){
 								emit(x, 1.8);
 							},
-							length: 512,
+							width: 512,
 							range: [0, 1],
 						})
 						.line({
@@ -276,7 +276,7 @@
 									emit(x, 1 + 0.05*x);
 								}
 							},
-							length: 2048,
+              width: 2048,
 							range: [0, 10*Math.PI],
 						})
 						.line({
