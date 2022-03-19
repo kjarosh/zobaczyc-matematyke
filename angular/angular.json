@@ -130,6 +130,12 @@
             ]
           }
         }
+      },
+      "i18n": {
+        "sourceLocale": "pl-PL",
+        "locales": {
+          "en": "src/i18n/messages.en.xlf"
+        }
       }
     }
   }
