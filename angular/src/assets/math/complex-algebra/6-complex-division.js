@@ -126,10 +126,8 @@
 						0, 0,
 					]
 				}).line({
-					size: 8,
 					color: Config.colors.green,
 					width: 4,
-					closed: true,
 					opacity: 0.5,
 				})
 

@@ -92,7 +92,6 @@
 				width: resolution,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.blue,
 				width: 2,
 				opacity: 0.5,
@@ -188,7 +187,6 @@
 				width: resolution,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.blue,
 				width: 2,
 				opacity: 0.5,
@@ -208,7 +206,6 @@
 				width: resolution,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.red,
 				width: 2,
 				opacity: 0.5,
@@ -287,7 +284,6 @@
 				width: resolution*4,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.blue,
 				width: 2,
 				opacity: 0.5,
@@ -338,7 +334,6 @@
 				width: resolution,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.blue,
 				width: 2,
 				opacity: 0.5,
@@ -390,7 +385,6 @@
 				width: resolution*10,
 				height: 2,
 			}).surface({
-				shaded: true,
 				color: Config.colors.blue,
 				width: 2,
 				opacity: 0.5,

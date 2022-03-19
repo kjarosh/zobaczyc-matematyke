@@ -68,8 +68,8 @@ function sinc(x, y){
 				}).surface({
 					color: Config.colors.blue,
 					shaded: true,
-					lineX: true,
-					lineY: true,
+          lineX: true,
+          lineY: true,
 				});
 
 		present.slide({

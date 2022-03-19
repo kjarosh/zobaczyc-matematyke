@@ -4,8 +4,10 @@
 	<meta charset="utf-8"/>
 	<title>Complex Algebra</title>
   <script src="../../jquery/jquery.min.js"></script>
-  <script src="../../mathbox/mathbox-bundle.js"></script>
-  <link rel="stylesheet" href="../../mathbox/mathbox.min.css">
+  <script src="../../three/three.js"></script>
+  <script src="../../three-examples/js/controls/OrbitControls.js"></script>
+  <script src="../../mathbox/bundle/mathbox.js"></script>
+  <link rel="stylesheet" href="../../mathbox/mathbox.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
@@ -13,7 +15,7 @@
 <script type="application/javascript">
 Config.registerInsert();
 
-var mathbox = mathBox({
+var mathbox = MathBox.mathBox({
 	plugins: Config.plugins,
 	controls: {
 		klass: THREE.OrbitControls,
