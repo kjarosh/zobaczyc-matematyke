@@ -1,0 +1,140 @@
+.iframemb {
+	overflow: hidden;
+	width: 100%;
+	height: 400px;
+	
+	&.right, &.left {
+		width: 50%;
+		border: 1px solid gray;
+	}
+	
+	&.right {
+		float: right;
+		margin: 30px 0px 30px 30px;
+	}
+	
+	&.left {
+		float: left;
+		margin: 30px 30px 30px 0px;
+	}
+	
+	iframe {
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+		border: none;
+	}
+}
+
+@presentHeight: 600px;
+div.present {
+	margin: 20px 0px 50px 0px;
+	padding: 0px;
+	width: 100%;
+	height: @presentHeight;
+	background-color: white;
+	//box-shadow: 0px 0px 30px #eeeeee;
+	border: 1px solid #eeeeee;
+	border-width: 1px 0px 1px 0px;
+	
+	h4 {
+		font-size: 20px;
+		margin: 0px 0px 10px 0px;
+		padding: 0px;
+	}
+	
+	iframe {
+		display: block;
+		float: left;
+		width: 60%;
+		height: 100%;
+		
+		//border-width: 0px 1px 0px 0px;
+		border-width: 0px;
+		border-color: @theme-border;
+	}
+	
+	div.slide-text {
+		float: left;
+		width: 40%;
+		height: @presentHeight;
+		padding: 25px;
+		
+		position: relative;
+		
+		div.slide-number {
+			color: gray;
+			margin-top: -10px;
+			margin-bottom: 10px;
+		}
+		
+		div.slide {
+			display: none;
+			
+			br {
+				display: block;
+				margin: 20px 0;
+				content: " ";
+				line-height: 150%;
+			}
+		}
+		
+		div.slide[data-slide~="1"] {
+			display: block;
+		}
+		
+		div.slide-buttons {
+			@arrowMargin: 20px;
+			position: absolute;
+			bottom: 25px;
+			width: calc(100% - 50px);
+			margin-top: auto;
+			height: 50px;
+			width: 3*50px + 2*@arrowMargin;
+			
+			div.arrow-left, div.arrow-right, div.arrow-reload {
+				height: 50px;
+				width: 50px;
+				background-image: url(../img/slideshow.png);
+				cursor: pointer;
+				display: inline-block;
+			}
+			
+			div.arrow-left, div.arrow-reload {
+				margin-right: @arrowMargin;
+			}
+			
+			div.arrow-left {
+				background-position: 0px 0px;
+			}
+			
+			div.arrow-right {
+				background-position: -100px 0px;
+			}
+			
+			div.arrow-reload {
+				background-position: -50px 0px;
+			}
+			
+			div {
+				float: left;
+			}
+			
+			.disabled {
+				filter: gray;
+				filter: grayscale(1);
+				-webkit-filter: grayscale(1);
+				cursor: default !important;
+			}
+		}
+	}
+}
+
+
+iframe#loading {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+}
