@@ -17,45 +17,33 @@ import {P5LimitsDerivativeComponent} from './pages/p5-limits-derivative/p5-limit
 import {P6MobiusComponent} from './pages/p6-mobius/p6-mobius.component';
 import {P7TaylorSeriesComponent} from './pages/p7-taylor-series/p7-taylor-series.component';
 import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/p8-analytic-continuation.component';
-import { P9ComplexIntegralComponent } from './pages/p9-complex-integral/p9-complex-integral.component';
+import {P9ComplexIntegralComponent} from './pages/p9-complex-integral/p9-complex-integral.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoadingComponent,
-    P0TocComponent,
-    P1InfoComponent,
-    P2IntroComponent,
-    SlidesHelperComponent,
-    PageHostDirective,
-    HeaderComponent,
-    CachedSrcDirective,
-    P3SeqSphereComponent,
-    P4Func3dComponent,
-    P5LimitsDerivativeComponent,
-    P6MobiusComponent,
-    P7TaylorSeriesComponent,
-    P8AnalyticContinuationComponent,
-    P9ComplexIntegralComponent,
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot([]),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    P0TocComponent,
-    P1InfoComponent,
-    P2IntroComponent,
-    P3SeqSphereComponent,
-    P4Func3dComponent,
-    P5LimitsDerivativeComponent,
-    P6MobiusComponent,
-    P7TaylorSeriesComponent,
-    P8AnalyticContinuationComponent,
-    P9ComplexIntegralComponent,
-  ],
+    declarations: [
+        AppComponent,
+        LoadingComponent,
+        P0TocComponent,
+        P1InfoComponent,
+        P2IntroComponent,
+        SlidesHelperComponent,
+        PageHostDirective,
+        HeaderComponent,
+        CachedSrcDirective,
+        P3SeqSphereComponent,
+        P4Func3dComponent,
+        P5LimitsDerivativeComponent,
+        P6MobiusComponent,
+        P7TaylorSeriesComponent,
+        P8AnalyticContinuationComponent,
+        P9ComplexIntegralComponent,
+    ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot([]),
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
