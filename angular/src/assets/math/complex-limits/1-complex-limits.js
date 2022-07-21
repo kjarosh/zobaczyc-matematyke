@@ -92,7 +92,7 @@ function sinc(x, y){
 			}).point({
 				size: 6,
 				color: Config.colors.orange,
-				zBias: 40,
+				zBias: 10,
 			})
 
 			.array({

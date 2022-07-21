@@ -58,7 +58,7 @@ export class P3SeqSphereComponent implements PageTemplate, OnInit {
     },
     {
       content: `Zachowuje się on podobnie dla każdej liczby zespolonej leżącej na zewnątrz
-      koła jednostkowego $$|{\color{red}{q}}|&gt;1$$`,
+      koła jednostkowego $$|{\\color{red}{q}}|&gt;1$$`,
       width: 2,
     },
     {

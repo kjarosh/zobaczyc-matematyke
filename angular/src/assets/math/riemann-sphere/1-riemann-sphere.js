@@ -178,13 +178,8 @@ var pointSize = 20;
 			size: pointSize,
 		});
 
-	var bluePoint = null;
 	function getBluePoint(){
-		//if(bluePoint == null){
-			bluePoint = present.select('#bpoint-array').get('data');
-		//}
-
-		return bluePoint;
+    return present.select('#bpoint-array').get('data');
 	}
 
 	present.slide({
@@ -209,7 +204,7 @@ var pointSize = 20;
 		}).line({
 			color: Config.colors.green,
 			width: 4,
-			zOrder: 5,
+			zOrder: -1,
 		});
 
 	present.slide({
@@ -306,7 +301,7 @@ var pointSize = 20;
 		})
 			.interval({
 				range: [1, 100],
-				length: 100,
+				width: 100,
 				channels: 3,
 				expr: function(emit, x, i, t){
 					var res = seqFunc(x);
@@ -326,7 +321,7 @@ var pointSize = 20;
 
 			.interval({
 				range: [1, 100],
-				length: 100,
+				width: 100,
 				channels: 3,
 				expr: function(emit, x, i, t){
 					var res = seqFunc(x);

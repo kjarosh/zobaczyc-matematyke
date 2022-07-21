@@ -283,7 +283,6 @@
 							color: Config.colors.green,
 							size: 4,
 							width: 5,
-							end: true,
 						})
 					.end()
 				.end()
