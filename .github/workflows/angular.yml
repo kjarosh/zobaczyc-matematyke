@@ -32,7 +32,10 @@ jobs:
       - name: Build
         run: |
           cd angular
-          ng build --configuration production --base-href / --localize
+          ng build --configuration production --base-href /
+          cp -r dist/zmcomplex pages
+          ng build --configuration production,en --base-href /
+          cp -r dist/zmcomplex/en-US pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -40,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'angular/dist/zmcomplex'
+          path: 'angular/pages'
 
   deploy:
     needs: build
