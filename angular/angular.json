@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["en-US"],
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/zmcomplex",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -129,6 +131,12 @@
               "**/node_modules/**"
             ]
           }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "pl-PL",
+        "locales": {
+          "en-US": "src/locale/messages.en-US.xlf"
         }
       }
     }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pl-PL" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="975006572a2a38ce1f0982f8a0eca14ba08f9941" datatype="html">
+        <source> Copyright ©2015-2016,2021-2022 Kamil Jarosz, wszystkie prawa zastrzeżone. Angular version. </source>
+        <target> Copyright ©2015-2016,2021-2022 Kamil Jarosz, all rights reserved. Angular version. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

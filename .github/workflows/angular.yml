@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: |
           cd angular
-          ng build --configuration production --base-href /
+          ng build --configuration production --base-href / --localize
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
