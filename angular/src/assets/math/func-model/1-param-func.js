@@ -1,5 +1,3 @@
-
-var functionParam = 0;
 (function paramFunc(){
 	var present = presentation.cartesian({
 		range: [[-40, 40], [-40, 40], [-40, 40]],

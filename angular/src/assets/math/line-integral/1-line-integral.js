@@ -1,5 +1,3 @@
-
-var functionParam = 0;
 (function lineIntegral(){
 	var present = presentation.cartesian({
 		range: [[-2, 2], [-2, 2], [-2, 2]],
@@ -75,7 +73,7 @@ var functionParam = 0;
 				width: 2,
 				//zIndex: 1,
 				opacity: 0.5,
-				zOrder: 1,
+				zOrder: 5,
 			})
 		.end()
 
@@ -221,7 +219,7 @@ var functionParam = 0;
 			}).surface({
 				color: Config.colors.orange,
 				width: 1,
-				zOrder: 2,
+				zOrder: 5,
 				opacity: 0.7,
 			})
 

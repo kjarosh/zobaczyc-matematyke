@@ -1,4 +1,3 @@
-
 (function examples(){
 	var present = presentation.cartesian({
 		range: [[-4, 4], [-4, 4], [-4, 4]],
@@ -6,24 +5,24 @@
 	}).transform({
 		position: [0, -1, 0]
 	});
-	
+
 	function func1(x, y){
 		return (Math.sin(x)+Math.cos(y))/2+1.1;
 	}
-	
+
 	function func2(x, y){
 		y += 4;
 		y /= 6;
-		
+
 		return x*y*y/4+1;
 	}
-	
+
 	function func3(x, y){
 		return (-x*x+y*y)/6+1;
 	}
-	
+
 	var resolution = 32;
-	
+
 	present.slide({
 		late: 3,
 	})
@@ -49,7 +48,7 @@
 				divideY: 10,
 				zOrder: 3
 			});
-	
+
 	present.slide()
 		.reveal({
 			duration: 1,
@@ -67,9 +66,10 @@
 				color: Config.colors.green,
 				lineX: true,
 				lineY: true,
-				width: 2
+				width: 2,
+        zOrder: 4
 			});
-	
+
 	present.slide()
 		.reveal({
 			duration: 1,
@@ -88,9 +88,10 @@
 				color: Config.colors.blue,
 				lineX: true,
 				lineY: true,
-				width: 2
+				width: 2,
+        zOrder: 4
 			});
-	
+
 	present.slide()
 		.reveal({
 			duration: 1,
@@ -109,6 +110,7 @@
 				color: Config.colors.orange,
 				lineX: true,
 				lineY: true,
-				width: 2
+				width: 2,
+        zOrder: 4
 			});
 })();

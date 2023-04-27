@@ -1,4 +1,3 @@
-
 (function funcModel(){
 	var present = presentation.cartesian({
 		range: [[-4, 4], [-4, 4], [-4, 4]],
@@ -105,7 +104,8 @@
 				color: color,
 				lineX: true,
 				lineY: true,
-				width: 2
+				width: 2,
+        zOrder: 4
 			})
 		.end()
 

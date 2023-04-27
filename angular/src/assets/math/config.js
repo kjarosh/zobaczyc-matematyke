@@ -149,7 +149,7 @@ var Config = {
 }
 
 if(typeof katex !== 'undefined'){
-	var latexFormat = MathBox.DOM.createClass({
+	MathBox.DOM.createClass({
 		render: function(el){
 			this.props.innerHTML = katex.renderToString(this.children);
 			return el('span', this.props);
@@ -159,7 +159,7 @@ if(typeof katex !== 'undefined'){
 
 function getUrlVars() {
 	var vars = {};
-	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value){
+	window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value){
 		vars[key] = value;
 	});
 
