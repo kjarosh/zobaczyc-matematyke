@@ -110,6 +110,9 @@
       <trans-unit id="f4e37e89110d29a5650d106d03069bb10a3b9c08" datatype="html">
         <source>&quot;Modelowanie&quot; funkcji dwóch zmiennych</source>
       </trans-unit>
+      <trans-unit id="68392eeeec7a845ea67a7d02687e3993dd577aa3" datatype="html">
+        <source>Zbaczając z osi rzeczywistej</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -12,9 +12,11 @@
       </trans-unit>
       <trans-unit id="98e28181c1fc76586d36430ac47db1a13f24000d" datatype="html">
         <source> Przygotowana prezentacja pokazuje piękno matematyki poznawanej poprzez jeden z jej działów — analizę zespoloną. Zaczynając od podstawowych pojęć związanych z liczbami zespolonymi, poprzez działania na nich, różnego rodzaju interpretacje wizualne, a kończąc na rozbudowanych funkcjach ukazuję nieodkrywany w szkole średniej świat o większej liczbie wymiarów. </source>
+        <target> The following presentation shows the beauty of mathematics through one of its branches — complex analysis. Starting from basic concepts related to complex numbers, operations on them, various visual representations, and complicated functions, I show an unexplored in high school world with greater number of dimensions. </target>
       </trans-unit>
       <trans-unit id="5c90f682059b2d2cb059036a78687d17dc2b393d" datatype="html">
         <source> Czytelnik zależnie od poziomu zainteresowania i zrozumienia może wybierać działy poczynając od prostych definicji i działań, a kończąc na przedłużeniach analitycznych i teorii całki. </source>
+        <target> The reader, depending on their level of interest and understanding, can choose sections ranging from simple definitions and operations to advanced analytical extensions and integrals. </target>
       </trans-unit>
       <trans-unit id="7e40bfd6916c5617ac9b22b75972d15bca086067" datatype="html">
         <source>Spis treści</source>
@@ -38,6 +40,7 @@
       </trans-unit>
       <trans-unit id="d565afa4237e81b436fa71d698fcbe8e9771694a" datatype="html">
         <source>Reprezentacja ciągu zespolonego, wyobrażenie sfery Riemanna.</source>
+        <target>Representation of a complex sequence, Riemann sphere visualization.</target>
       </trans-unit>
       <trans-unit id="8f9c7b7d69d4b516b685bffbc6a8f33586cd8434" datatype="html">
         <source>Funkcje dwóch zmiennych i funkcje zespolone</source>
@@ -80,6 +83,7 @@
       </trans-unit>
       <trans-unit id="42a94532ae00503ee899789f86e6e3af61256585" datatype="html">
         <source>Operacja całkowania na funkcjach zespolonych.</source>
+        <target>Integrals of complex functions</target>
       </trans-unit>
       <trans-unit id="57fd0803b4e7b341b330306c11094a93c44a9e97" datatype="html">
         <source> Jak zapewne wszyscy wiemy, każdy wielomian kwadratowy może mieć dwa pierwiastki, jeden lub może nie mieć ich wcale. Jednak możemy zdefiniować pojęcie nowej liczby, dzięki której każdy trójmian kwadratowy będzie mieć co najmniej jeden pierwiastek. Pozwoli nam to pierwiastkować liczby ujemne. </source>
@@ -101,12 +105,15 @@
       </trans-unit>
       <trans-unit id="ca665531421c53cf9209f01d92dffc14bd4e5e71" datatype="html">
         <source>Reprezentacja ciągu</source>
+        <target>Representation of a sequence</target>
       </trans-unit>
       <trans-unit id="333b12930d76d646ea88fbfcdb610df8d5444922" datatype="html">
         <source>Własności ciągu</source>
+        <target>Properties of a sequence</target>
       </trans-unit>
       <trans-unit id="fb68a761551d98dcc13d7b6ba10d524539dbeb26" datatype="html">
         <source>Sfera Riemanna i nieskończoność zespolona</source>
+        <target>Riemann sphere and complex infinity</target>
       </trans-unit>
       <trans-unit id="2c5c7fe60f0965cd807ed9ac5c0e07e3e1d7658c" datatype="html">
         <source>Następna strona: Funkcje dwóch zmiennych i funkcje zespolone</source>
@@ -117,7 +124,7 @@
       </trans-unit>
       <trans-unit id="f4e37e89110d29a5650d106d03069bb10a3b9c08" datatype="html">
         <source>&quot;Modelowanie&quot; funkcji dwóch zmiennych</source>
-        <target state="new">&quot;Modelowanie&quot; funkcji dwóch zmiennych</target>
+        <target>&quot;Modeling&quot; functions of two variables</target>
       </trans-unit>
       <trans-unit id="dc3a789a923a189dd108850cd9f8bc6125a73c9a" datatype="html">
         <source>Funkcje zespolone</source>
@@ -130,6 +137,10 @@
       <trans-unit id="ecd9247ce248398716eb57684b8c7291fda78639" datatype="html">
         <source>Następna strona: Granice funkcji zespolonej i pochodna zespolona</source>
         <target state="new">Następna strona: Granice funkcji zespolonej i pochodna zespolona</target>
+      </trans-unit>
+      <trans-unit id="68392eeeec7a845ea67a7d02687e3993dd577aa3" datatype="html">
+        <source>Zbaczając z osi rzeczywistej</source>
+        <target>Deviating from the real axis</target>
       </trans-unit>
     </body>
   </file>
