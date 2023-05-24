@@ -1,4 +1,4 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PageTemplate} from '../page-template';
 
 @Component({
@@ -7,7 +7,7 @@ import {PageTemplate} from '../page-template';
   styleUrls: ['./p0-toc.component.less']
 })
 export class P0TocComponent implements PageTemplate, OnInit {
-  constructor(@Inject(LOCALE_ID) private locale: string) {
+  constructor() {
 
   }
 
@@ -20,6 +20,6 @@ export class P0TocComponent implements PageTemplate, OnInit {
   }
 
   isEnglishVersion(): boolean {
-    return this.locale === 'en-US';
+    return window.location.href.includes('/en-US');
   }
 }

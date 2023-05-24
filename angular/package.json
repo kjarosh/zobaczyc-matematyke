@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-full": "rm -rf dist/full && ng build --configuration production --base-href / && cp -r dist/zmcomplex dist/full && ng build --configuration production,en --base-href / && cp -r dist/zmcomplex/en-US dist/full",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
