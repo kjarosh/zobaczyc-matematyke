@@ -52,7 +52,7 @@
       </trans-unit>
       <trans-unit id="2b1fcd4f570e5226a9e4c94f84891f5041010130" datatype="html">
         <source>Granice funkcji zespolonych i pochodna zespolona</source>
-        <target>Limits of complex function and complex derivative</target>
+        <target>Limits of complex functions and complex derivative</target>
       </trans-unit>
       <trans-unit id="ea7a0af2d81cd41c986f69635c3a6f2c05369ff9" datatype="html">
         <source>Wyobrażenie granicy funkcji zespolonej, różniczkowanie funkcji.</source>
@@ -145,11 +145,11 @@
       </trans-unit>
       <trans-unit id="8f2401e0678440ee6dfe922a8ae696a1530ee903" datatype="html">
         <source>Składanie homografu</source>
-        <target state="new">Składanie homografu</target>
+        <target>Assembling a homographic function</target>
       </trans-unit>
       <trans-unit id="1a828f46bc7233b4e9a2c9d8c03f4c6e01ba4007" datatype="html">
         <source>Odwzorowanie równokątne</source>
-        <target state="new">Odwzorowanie równokątne</target>
+        <target>Angle-preserving mapping</target>
       </trans-unit>
       <trans-unit id="b067f740a48c2e7134f0c06a10201c1cc2e3252b" datatype="html">
         <source>Funkcja gładka jako wielomian</source>
@@ -157,7 +157,7 @@
       </trans-unit>
       <trans-unit id="edcf600b4fee0e3ee9227b8babadbbfc05ebe1d3" datatype="html">
         <source>Szereg Taylora jako podstawowe narzędzie</source>
-        <target state="new">Szereg Taylora jako podstawowe narzędzie</target>
+        <target>Taylor series as a basic tool</target>
       </trans-unit>
       <trans-unit id="e9f9eb1be666c556063312af7c8e62a1e4f3e215" datatype="html">
         <source>Całka oznaczona</source>
@@ -166,10 +166,6 @@
       <trans-unit id="a8c827a0b8f2ed9592d41d769a88903c910cbe4a" datatype="html">
         <source>Następna strona</source>
         <target>Next page</target>
-      </trans-unit>
-      <trans-unit id="2863d53c07a381ddc12fc47f09d686661b354543" datatype="html">
-        <source>Granice funkcji zespolonej i pochodna zespolona</source>
-        <target state="new">Granice funkcji zespolonej i pochodna zespolona</target>
       </trans-unit>
       <trans-unit id="df549ee2e0d6f7f5f997986be289fce42eec94d2" datatype="html">
         <source>Porządkowanie liczb zespolonych</source>

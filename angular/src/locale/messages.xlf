@@ -128,9 +128,6 @@
       <trans-unit id="a8c827a0b8f2ed9592d41d769a88903c910cbe4a" datatype="html">
         <source>Następna strona</source>
       </trans-unit>
-      <trans-unit id="2863d53c07a381ddc12fc47f09d686661b354543" datatype="html">
-        <source>Granice funkcji zespolonej i pochodna zespolona</source>
-      </trans-unit>
       <trans-unit id="7f633e24e1e12200026a6fea66154d825d5c2577" datatype="html">
         <source>Całka krzywoliniowa</source>
       </trans-unit>
