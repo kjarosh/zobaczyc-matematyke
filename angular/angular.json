@@ -99,9 +99,14 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
-            "browserTarget": "zmcomplex:build"
+            "browserTarget": "zmcomplex:build",
+            "format": "xlf",
+            "outputPath": "src/locale",
+            "targetFiles": [
+              "messages.en-US.xlf"
+            ]
           }
         },
         "test": {

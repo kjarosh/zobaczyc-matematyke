@@ -5,10 +5,131 @@
       <trans-unit id="975006572a2a38ce1f0982f8a0eca14ba08f9941" datatype="html">
         <source> Copyright ©2015-2016,2021-2022 Kamil Jarosz, wszystkie prawa zastrzeżone. Angular version. </source>
         <target> Copyright ©2015-2016,2021-2022 Kamil Jarosz, all rights reserved. Angular version. </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">16,18</context>
-        </context-group>
+      </trans-unit>
+      <trans-unit id="624de3a96d78b5e7a1277283e51b003aa2ab4484" datatype="html">
+        <source>Strona główna</source>
+        <target>Main page</target>
+      </trans-unit>
+      <trans-unit id="98e28181c1fc76586d36430ac47db1a13f24000d" datatype="html">
+        <source> Przygotowana prezentacja pokazuje piękno matematyki poznawanej poprzez jeden z jej działów — analizę zespoloną. Zaczynając od podstawowych pojęć związanych z liczbami zespolonymi, poprzez działania na nich, różnego rodzaju interpretacje wizualne, a kończąc na rozbudowanych funkcjach ukazuję nieodkrywany w szkole średniej świat o większej liczbie wymiarów. </source>
+      </trans-unit>
+      <trans-unit id="5c90f682059b2d2cb059036a78687d17dc2b393d" datatype="html">
+        <source> Czytelnik zależnie od poziomu zainteresowania i zrozumienia może wybierać działy poczynając od prostych definicji i działań, a kończąc na przedłużeniach analitycznych i teorii całki. </source>
+      </trans-unit>
+      <trans-unit id="7e40bfd6916c5617ac9b22b75972d15bca086067" datatype="html">
+        <source>Spis treści</source>
+        <target>Table of contents</target>
+      </trans-unit>
+      <trans-unit id="d4dc9733b2ba6df165ab58d892037d0daeda05f7" datatype="html">
+        <source>Informacje o stronie</source>
+        <target>About the website</target>
+      </trans-unit>
+      <trans-unit id="14380867289f738b2438cac710ebe1e83f276573" datatype="html">
+        <source>Wstęp do liczb zespolonych</source>
+        <target>Introduction to complex numbers</target>
+      </trans-unit>
+      <trans-unit id="6db1a7f7ed7508f79098a3c7a22f93d0c740a4a2" datatype="html">
+        <source>Definicja, podstawowe własności i działania na liczbach zespolonych.</source>
+        <target>Definition, basic properties, and operations on complex numbers.</target>
+      </trans-unit>
+      <trans-unit id="52bc17ac7f23559277a5b1a1fcab54b00953cebf" datatype="html">
+        <source>Ciągi zespolone i sfera Riemanna</source>
+        <target>Complex sequences and Riemann sphere</target>
+      </trans-unit>
+      <trans-unit id="d565afa4237e81b436fa71d698fcbe8e9771694a" datatype="html">
+        <source>Reprezentacja ciągu zespolonego, wyobrażenie sfery Riemanna.</source>
+      </trans-unit>
+      <trans-unit id="8f9c7b7d69d4b516b685bffbc6a8f33586cd8434" datatype="html">
+        <source>Funkcje dwóch zmiennych i funkcje zespolone</source>
+        <target>Functions of two variables and complex functions</target>
+      </trans-unit>
+      <trans-unit id="07971c4006668da6d56b6466fed0e42daff8ceb0" datatype="html">
+        <source>Powierzchnie trójwymiarowe i różne reprezentacje funkcji zespolonych.</source>
+      </trans-unit>
+      <trans-unit id="2b1fcd4f570e5226a9e4c94f84891f5041010130" datatype="html">
+        <source>Granice funkcji zespolonych i pochodna zespolona</source>
+      </trans-unit>
+      <trans-unit id="ea7a0af2d81cd41c986f69635c3a6f2c05369ff9" datatype="html">
+        <source>Wyobrażenie granicy funkcji zespolonej, różniczkowanie funkcji.</source>
+      </trans-unit>
+      <trans-unit id="9753477f0ecb8493433a4edcf14dea322f4f6480" datatype="html">
+        <source>Transformacje Möbiusa</source>
+        <target>Möbius transformations</target>
+      </trans-unit>
+      <trans-unit id="9bc350aa161e25e9406978fb3e9cfdc58be482c8" datatype="html">
+        <source>Zobrazowanie transformacji Möbiusa na płaszczyźnie zespolonej.</source>
+        <target>Visualization of Möbius transformations on a complex plane.</target>
+      </trans-unit>
+      <trans-unit id="fe96353eb2706d36639339a5ce191c4d79659725" datatype="html">
+        <source>Szereg Taylora</source>
+        <target>Taylor series</target>
+      </trans-unit>
+      <trans-unit id="ea7d4b892bf3527da90b8235ae640b3374ce6fc6" datatype="html">
+        <source>Aproksymacja funkcji rzeczywistych — wstęp do podstawowego narzędzia analizy zespolonej.</source>
+      </trans-unit>
+      <trans-unit id="572a09d6554ec6c778af14511e9a3656c704cb9b" datatype="html">
+        <source>Przedłużenia analityczne</source>
+        <target>Analytic continuations</target>
+      </trans-unit>
+      <trans-unit id="4bbfca7df3f08104fd79d1f008a7ac6487c166b9" datatype="html">
+        <source>&quot;Szukanie&quot; funkcji za pomocą szeregu Taylora.</source>
+      </trans-unit>
+      <trans-unit id="560152aacc56867dd132d5cd84aefdd91a97262b" datatype="html">
+        <source>Całka zespolona</source>
+        <target>Complex integrals</target>
+      </trans-unit>
+      <trans-unit id="42a94532ae00503ee899789f86e6e3af61256585" datatype="html">
+        <source>Operacja całkowania na funkcjach zespolonych.</source>
+      </trans-unit>
+      <trans-unit id="57fd0803b4e7b341b330306c11094a93c44a9e97" datatype="html">
+        <source> Jak zapewne wszyscy wiemy, każdy wielomian kwadratowy może mieć dwa pierwiastki, jeden lub może nie mieć ich wcale. Jednak możemy zdefiniować pojęcie nowej liczby, dzięki której każdy trójmian kwadratowy będzie mieć co najmniej jeden pierwiastek. Pozwoli nam to pierwiastkować liczby ujemne. </source>
+      </trans-unit>
+      <trans-unit id="9f2db7d8d7c88ac1f4dddb636c03ae110e12ac8a" datatype="html">
+        <source>Zupełnie nowa liczba</source>
+        <target>A brand new number</target>
+      </trans-unit>
+      <trans-unit id="ec33977d004fcd94a08cfd5db3c8e0fe8e40b26e" datatype="html">
+        <source>Własności liczb zespolonych</source>
+        <target>Proprties of complex numbers</target>
+      </trans-unit>
+      <trans-unit id="23f7ac93253e9069039dd98ca2ec5249830d9760" datatype="html">
+        <source>Wielomiany</source>
+        <target>Polynomials</target>
+      </trans-unit>
+      <trans-unit id="1b3c20205266418e8c4a1a24e07209af5725be07" datatype="html">
+        <source>Następna strona: Ciągi zespolone i sfera Riemanna</source>
+      </trans-unit>
+      <trans-unit id="ca665531421c53cf9209f01d92dffc14bd4e5e71" datatype="html">
+        <source>Reprezentacja ciągu</source>
+      </trans-unit>
+      <trans-unit id="333b12930d76d646ea88fbfcdb610df8d5444922" datatype="html">
+        <source>Własności ciągu</source>
+      </trans-unit>
+      <trans-unit id="fb68a761551d98dcc13d7b6ba10d524539dbeb26" datatype="html">
+        <source>Sfera Riemanna i nieskończoność zespolona</source>
+      </trans-unit>
+      <trans-unit id="2c5c7fe60f0965cd807ed9ac5c0e07e3e1d7658c" datatype="html">
+        <source>Następna strona: Funkcje dwóch zmiennych i funkcje zespolone</source>
+      </trans-unit>
+      <trans-unit id="18e2852d24242193bc642f31b0e0613d0c0a5b3a" datatype="html">
+        <source>Funkcje dwóch zmiennych</source>
+        <target>Functions of two variables</target>
+      </trans-unit>
+      <trans-unit id="f4e37e89110d29a5650d106d03069bb10a3b9c08" datatype="html">
+        <source>&quot;Modelowanie&quot; funkcji dwóch zmiennych</source>
+        <target state="new">&quot;Modelowanie&quot; funkcji dwóch zmiennych</target>
+      </trans-unit>
+      <trans-unit id="dc3a789a923a189dd108850cd9f8bc6125a73c9a" datatype="html">
+        <source>Funkcje zespolone</source>
+        <target>Complex functions</target>
+      </trans-unit>
+      <trans-unit id="1a3923e06493b4b9da459a804dee86a868d7e510" datatype="html">
+        <source>Sposoby przedstawiania funkcji zespolonej</source>
+        <target state="new">Sposoby przedstawiania funkcji zespolonej</target>
+      </trans-unit>
+      <trans-unit id="ecd9247ce248398716eb57684b8c7291fda78639" datatype="html">
+        <source>Następna strona: Granice funkcji zespolonej i pochodna zespolona</source>
+        <target state="new">Następna strona: Granice funkcji zespolonej i pochodna zespolona</target>
       </trans-unit>
     </body>
   </file>
