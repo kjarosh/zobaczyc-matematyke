@@ -48,9 +48,11 @@
       </trans-unit>
       <trans-unit id="07971c4006668da6d56b6466fed0e42daff8ceb0" datatype="html">
         <source>Powierzchnie trójwymiarowe i różne reprezentacje funkcji zespolonych.</source>
+        <target>3D surfaces and various representations of complex functions.</target>
       </trans-unit>
       <trans-unit id="2b1fcd4f570e5226a9e4c94f84891f5041010130" datatype="html">
         <source>Granice funkcji zespolonych i pochodna zespolona</source>
+        <target>Limits of complex function and complex derivative</target>
       </trans-unit>
       <trans-unit id="ea7a0af2d81cd41c986f69635c3a6f2c05369ff9" datatype="html">
         <source>Wyobrażenie granicy funkcji zespolonej, różniczkowanie funkcji.</source>
@@ -69,6 +71,7 @@
       </trans-unit>
       <trans-unit id="ea7d4b892bf3527da90b8235ae640b3374ce6fc6" datatype="html">
         <source>Aproksymacja funkcji rzeczywistych — wstęp do podstawowego narzędzia analizy zespolonej.</source>
+        <target>Real function approximation — an introduction to the basic tool of complex analysis.</target>
       </trans-unit>
       <trans-unit id="572a09d6554ec6c778af14511e9a3656c704cb9b" datatype="html">
         <source>Przedłużenia analityczne</source>
@@ -100,9 +103,6 @@
         <source>Wielomiany</source>
         <target>Polynomials</target>
       </trans-unit>
-      <trans-unit id="1b3c20205266418e8c4a1a24e07209af5725be07" datatype="html">
-        <source>Następna strona: Ciągi zespolone i sfera Riemanna</source>
-      </trans-unit>
       <trans-unit id="ca665531421c53cf9209f01d92dffc14bd4e5e71" datatype="html">
         <source>Reprezentacja ciągu</source>
         <target>Representation of a sequence</target>
@@ -114,9 +114,6 @@
       <trans-unit id="fb68a761551d98dcc13d7b6ba10d524539dbeb26" datatype="html">
         <source>Sfera Riemanna i nieskończoność zespolona</source>
         <target>Riemann sphere and complex infinity</target>
-      </trans-unit>
-      <trans-unit id="2c5c7fe60f0965cd807ed9ac5c0e07e3e1d7658c" datatype="html">
-        <source>Następna strona: Funkcje dwóch zmiennych i funkcje zespolone</source>
       </trans-unit>
       <trans-unit id="18e2852d24242193bc642f31b0e0613d0c0a5b3a" datatype="html">
         <source>Funkcje dwóch zmiennych</source>
@@ -134,13 +131,53 @@
         <source>Sposoby przedstawiania funkcji zespolonej</source>
         <target state="new">Sposoby przedstawiania funkcji zespolonej</target>
       </trans-unit>
-      <trans-unit id="ecd9247ce248398716eb57684b8c7291fda78639" datatype="html">
-        <source>Następna strona: Granice funkcji zespolonej i pochodna zespolona</source>
-        <target state="new">Następna strona: Granice funkcji zespolonej i pochodna zespolona</target>
-      </trans-unit>
       <trans-unit id="68392eeeec7a845ea67a7d02687e3993dd577aa3" datatype="html">
         <source>Zbaczając z osi rzeczywistej</source>
         <target>Deviating from the real axis</target>
+      </trans-unit>
+      <trans-unit id="3fb4b0cee662944588bcfb434ea13ed875ecd931" datatype="html">
+        <source>Granice funkcji zespolonych</source>
+        <target>Limits of complex function</target>
+      </trans-unit>
+      <trans-unit id="0da2708eda483ada17699ab8203100f0242f8ba5" datatype="html">
+        <source>Pochodna funkcji zespolonej</source>
+        <target>Derivative of a complex function</target>
+      </trans-unit>
+      <trans-unit id="8f2401e0678440ee6dfe922a8ae696a1530ee903" datatype="html">
+        <source>Składanie homografu</source>
+        <target state="new">Składanie homografu</target>
+      </trans-unit>
+      <trans-unit id="1a828f46bc7233b4e9a2c9d8c03f4c6e01ba4007" datatype="html">
+        <source>Odwzorowanie równokątne</source>
+        <target state="new">Odwzorowanie równokątne</target>
+      </trans-unit>
+      <trans-unit id="b067f740a48c2e7134f0c06a10201c1cc2e3252b" datatype="html">
+        <source>Funkcja gładka jako wielomian</source>
+        <target state="new">Funkcja gładka jako wielomian</target>
+      </trans-unit>
+      <trans-unit id="edcf600b4fee0e3ee9227b8babadbbfc05ebe1d3" datatype="html">
+        <source>Szereg Taylora jako podstawowe narzędzie</source>
+        <target state="new">Szereg Taylora jako podstawowe narzędzie</target>
+      </trans-unit>
+      <trans-unit id="e9f9eb1be666c556063312af7c8e62a1e4f3e215" datatype="html">
+        <source>Całka oznaczona</source>
+        <target>Definite integral</target>
+      </trans-unit>
+      <trans-unit id="a8c827a0b8f2ed9592d41d769a88903c910cbe4a" datatype="html">
+        <source>Następna strona</source>
+        <target>Next page</target>
+      </trans-unit>
+      <trans-unit id="2863d53c07a381ddc12fc47f09d686661b354543" datatype="html">
+        <source>Granice funkcji zespolonej i pochodna zespolona</source>
+        <target state="new">Granice funkcji zespolonej i pochodna zespolona</target>
+      </trans-unit>
+      <trans-unit id="df549ee2e0d6f7f5f997986be289fce42eec94d2" datatype="html">
+        <source>Porządkowanie liczb zespolonych</source>
+        <target>Ordering of complex numbers</target>
+      </trans-unit>
+      <trans-unit id="7f633e24e1e12200026a6fea66154d825d5c2577" datatype="html">
+        <source>Całka krzywoliniowa</source>
+        <target>Line integral</target>
       </trans-unit>
     </body>
   </file>

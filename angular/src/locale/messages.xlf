@@ -80,9 +80,6 @@
       <trans-unit id="23f7ac93253e9069039dd98ca2ec5249830d9760" datatype="html">
         <source>Wielomiany</source>
       </trans-unit>
-      <trans-unit id="1b3c20205266418e8c4a1a24e07209af5725be07" datatype="html">
-        <source>Następna strona: Ciągi zespolone i sfera Riemanna</source>
-      </trans-unit>
       <trans-unit id="ca665531421c53cf9209f01d92dffc14bd4e5e71" datatype="html">
         <source>Reprezentacja ciągu</source>
       </trans-unit>
@@ -91,9 +88,6 @@
       </trans-unit>
       <trans-unit id="fb68a761551d98dcc13d7b6ba10d524539dbeb26" datatype="html">
         <source>Sfera Riemanna i nieskończoność zespolona</source>
-      </trans-unit>
-      <trans-unit id="2c5c7fe60f0965cd807ed9ac5c0e07e3e1d7658c" datatype="html">
-        <source>Następna strona: Funkcje dwóch zmiennych i funkcje zespolone</source>
       </trans-unit>
       <trans-unit id="18e2852d24242193bc642f31b0e0613d0c0a5b3a" datatype="html">
         <source>Funkcje dwóch zmiennych</source>
@@ -104,14 +98,44 @@
       <trans-unit id="dc3a789a923a189dd108850cd9f8bc6125a73c9a" datatype="html">
         <source>Funkcje zespolone</source>
       </trans-unit>
-      <trans-unit id="ecd9247ce248398716eb57684b8c7291fda78639" datatype="html">
-        <source>Następna strona: Granice funkcji zespolonej i pochodna zespolona</source>
-      </trans-unit>
       <trans-unit id="f4e37e89110d29a5650d106d03069bb10a3b9c08" datatype="html">
         <source>&quot;Modelowanie&quot; funkcji dwóch zmiennych</source>
       </trans-unit>
       <trans-unit id="68392eeeec7a845ea67a7d02687e3993dd577aa3" datatype="html">
         <source>Zbaczając z osi rzeczywistej</source>
+      </trans-unit>
+      <trans-unit id="0da2708eda483ada17699ab8203100f0242f8ba5" datatype="html">
+        <source>Pochodna funkcji zespolonej</source>
+      </trans-unit>
+      <trans-unit id="1a828f46bc7233b4e9a2c9d8c03f4c6e01ba4007" datatype="html">
+        <source>Odwzorowanie równokątne</source>
+      </trans-unit>
+      <trans-unit id="3fb4b0cee662944588bcfb434ea13ed875ecd931" datatype="html">
+        <source>Granice funkcji zespolonych</source>
+      </trans-unit>
+      <trans-unit id="8f2401e0678440ee6dfe922a8ae696a1530ee903" datatype="html">
+        <source>Składanie homografu</source>
+      </trans-unit>
+      <trans-unit id="b067f740a48c2e7134f0c06a10201c1cc2e3252b" datatype="html">
+        <source>Funkcja gładka jako wielomian</source>
+      </trans-unit>
+      <trans-unit id="e9f9eb1be666c556063312af7c8e62a1e4f3e215" datatype="html">
+        <source>Całka oznaczona</source>
+      </trans-unit>
+      <trans-unit id="edcf600b4fee0e3ee9227b8babadbbfc05ebe1d3" datatype="html">
+        <source>Szereg Taylora jako podstawowe narzędzie</source>
+      </trans-unit>
+      <trans-unit id="a8c827a0b8f2ed9592d41d769a88903c910cbe4a" datatype="html">
+        <source>Następna strona</source>
+      </trans-unit>
+      <trans-unit id="2863d53c07a381ddc12fc47f09d686661b354543" datatype="html">
+        <source>Granice funkcji zespolonej i pochodna zespolona</source>
+      </trans-unit>
+      <trans-unit id="7f633e24e1e12200026a6fea66154d825d5c2577" datatype="html">
+        <source>Całka krzywoliniowa</source>
+      </trans-unit>
+      <trans-unit id="df549ee2e0d6f7f5f997986be289fce42eec94d2" datatype="html">
+        <source>Porządkowanie liczb zespolonych</source>
       </trans-unit>
     </body>
   </file>
