@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild} from '@angular/core';
 import {P0TocComponent} from './pages/p0-toc/p0-toc.component';
 import {P1InfoComponent} from './pages/p1-info/p1-info.component';
 import {ActivatedRoute} from '@angular/router';
@@ -15,7 +15,7 @@ import {P8AnalyticContinuationComponent} from './pages/p8-analytic-continuation/
 import {P9ComplexIntegralComponent} from './pages/p9-complex-integral/p9-complex-integral.component';
 
 const PAGES: Map<number, Type<PageTemplate>> = new Map([
-  [0, P0TocComponent],
+  [0, P0TocComponent as Type<PageTemplate>],
   [1, P1InfoComponent],
   [2, P2IntroComponent],
   [3, P3SeqSphereComponent],
@@ -50,11 +50,9 @@ export class AppComponent implements OnInit {
   }
 
   setPage(n: number): void {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(PAGES.get(n));
-
     const viewContainerRef = this.pageHost.viewContainerRef;
     viewContainerRef.clear();
-    const component: ComponentRef<unknown> = viewContainerRef.createComponent(componentFactory);
+    const component: ComponentRef<unknown> = viewContainerRef.createComponent(PAGES.get(n));
     const pageTemplate: PageTemplate = component.instance as PageTemplate;
     this.titleService.setTitle(pageTemplate.getPageTitle());
   }

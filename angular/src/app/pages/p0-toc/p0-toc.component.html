@@ -1,6 +1,15 @@
 <div class="content">
   <h2>Strona główna</h2>
 
+  <aside>
+    <p>
+      <em>
+        <a href="../" *ngIf="isEnglishVersion()">Wersja polska</a>
+        <a href="./en-US/" *ngIf="!isEnglishVersion()">English version</a>
+      </em>
+    </p>
+  </aside>
+
   <p>
     Przygotowana prezentacja pokazuje piękno matematyki poznawanej
     poprzez jeden z jej działów &mdash; analizę zespoloną. Zaczynając od podstawowych pojęć związanych

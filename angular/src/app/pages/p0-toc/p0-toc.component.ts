@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {PageTemplate} from '../page-template';
 
 @Component({
@@ -7,7 +7,7 @@ import {PageTemplate} from '../page-template';
   styleUrls: ['./p0-toc.component.less']
 })
 export class P0TocComponent implements PageTemplate, OnInit {
-  constructor() {
+  constructor(@Inject(LOCALE_ID) private locale: string) {
 
   }
 
@@ -17,5 +17,9 @@ export class P0TocComponent implements PageTemplate, OnInit {
 
   getPageTitle(): string {
     return 'Strona główna - Zbaczając z osi rzeczywistej';
+  }
+
+  isEnglishVersion(): boolean {
+    return this.locale === 'en-US';
   }
 }
