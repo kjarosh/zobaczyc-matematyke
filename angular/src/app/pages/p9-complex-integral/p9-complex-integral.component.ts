@@ -79,7 +79,6 @@ export class P9ComplexIntegralComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Całka zespolona';
+    return $localize`:@@560152aacc56867dd132d5cd84aefdd91a97262b:Całka zespolona`;
   }
-
 }

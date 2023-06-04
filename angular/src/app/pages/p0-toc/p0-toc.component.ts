@@ -16,7 +16,7 @@ export class P0TocComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Strona główna - Zbaczając z osi rzeczywistej';
+    return $localize`:@@624de3a96d78b5e7a1277283e51b003aa2ab4484:Strona główna`;
   }
 
   isEnglishVersion(): boolean {

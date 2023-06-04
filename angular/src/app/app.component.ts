@@ -1,7 +1,6 @@
-import {Component, ComponentFactoryResolver, ComponentRef, OnInit, Type, ViewChild} from '@angular/core';
+import {Component, ComponentRef, OnInit, Type, ViewChild} from '@angular/core';
 import {P0TocComponent} from './pages/p0-toc/p0-toc.component';
 import {P1InfoComponent} from './pages/p1-info/p1-info.component';
-import {ActivatedRoute} from '@angular/router';
 import {PageTemplate} from './pages/page-template';
 import {Title} from '@angular/platform-browser';
 import {P2IntroComponent} from './pages/p2-intro/p2-intro.component';
@@ -36,9 +35,7 @@ export class AppComponent implements OnInit {
   @ViewChild(PageHostDirective, {static: true})
   pageHost!: PageHostDirective;
 
-  constructor(private route: ActivatedRoute,
-              private componentFactoryResolver: ComponentFactoryResolver,
-              private titleService: Title) {
+  constructor(private titleService: Title) {
 
   }
 
@@ -54,6 +51,8 @@ export class AppComponent implements OnInit {
     viewContainerRef.clear();
     const component: ComponentRef<unknown> = viewContainerRef.createComponent(PAGES.get(n));
     const pageTemplate: PageTemplate = component.instance as PageTemplate;
-    this.titleService.setTitle(pageTemplate.getPageTitle());
+    let title = pageTemplate.getPageTitle();
+    title += ' – ' + $localize`:@@68392eeeec7a845ea67a7d02687e3993dd577aa3:Zbaczając z osi rzeczywistej`;
+    this.titleService.setTitle(title);
   }
 }

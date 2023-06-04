@@ -14,7 +14,6 @@ export class P1InfoComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Informacje o stronie - Zbaczając z osi rzeczywistej';
+    return $localize`:@@d4dc9733b2ba6df165ab58d892037d0daeda05f7:Informacje o stronie`;
   }
-
 }

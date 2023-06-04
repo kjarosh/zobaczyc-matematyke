@@ -61,7 +61,6 @@ export class P5LimitsDerivativeComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Granice funkcji zespolonych i pochodna w sensie zespolonym';
+    return $localize`:@@2b1fcd4f570e5226a9e4c94f84891f5041010130:Granice funkcji zespolonych i pochodna zespolona`;
   }
-
 }

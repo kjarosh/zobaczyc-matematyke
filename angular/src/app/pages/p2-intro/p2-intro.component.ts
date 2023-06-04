@@ -106,6 +106,6 @@ export class P2IntroComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Wstęp do liczb zespolonych - Zbaczając z osi rzeczywistej';
+    return $localize`:@@14380867289f738b2438cac710ebe1e83f276573:Wstęp do liczb zespolonych`;
   }
 }

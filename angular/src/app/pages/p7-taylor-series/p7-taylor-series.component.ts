@@ -142,7 +142,6 @@ export class P7TaylorSeriesComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Szereg Taylora';
+    return $localize`:@@fe96353eb2706d36639339a5ce191c4d79659725:Szereg Taylora`;
   }
-
 }

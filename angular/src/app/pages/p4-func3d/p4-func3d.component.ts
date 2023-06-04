@@ -220,7 +220,6 @@ export class P4Func3dComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Funkcje dwóch zmiennych i funkcje zespolone';
+    return $localize`:@@8f9c7b7d69d4b516b685bffbc6a8f33586cd8434:Funkcje dwóch zmiennych i funkcje zespolone`;
   }
-
 }

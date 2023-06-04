@@ -133,6 +133,6 @@ export class P3SeqSphereComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Ciągi zespolone i sfera Riemanna';
+    return $localize`:@@52bc17ac7f23559277a5b1a1fcab54b00953cebf:Ciągi zespolone i sfera Riemanna`;
   }
 }

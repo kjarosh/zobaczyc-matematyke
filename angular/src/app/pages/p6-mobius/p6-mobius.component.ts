@@ -95,7 +95,6 @@ export class P6MobiusComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Transformacje Möbiusa';
+    return $localize`:@@9753477f0ecb8493433a4edcf14dea322f4f6480:Transformacje Möbiusa`;
   }
-
 }

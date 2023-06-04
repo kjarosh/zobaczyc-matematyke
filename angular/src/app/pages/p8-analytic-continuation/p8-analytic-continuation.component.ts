@@ -125,7 +125,6 @@ export class P8AnalyticContinuationComponent implements PageTemplate, OnInit {
   }
 
   getPageTitle(): string {
-    return 'Przedłużenia analityczne';
+    return $localize`:@@572a09d6554ec6c778af14511e9a3656c704cb9b:Przedłużenia analityczne`;
   }
-
 }
