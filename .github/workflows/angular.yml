@@ -36,7 +36,7 @@ jobs:
           cp -r dist/zmcomplex/en-US pages
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
