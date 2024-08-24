@@ -36,7 +36,7 @@
     "@angular/localize": "^15.2.8",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
+    "@types/node": "~20.16.0",
     "codelyzer": "^6.0.2",
     "jasmine-core": "^4.2.0",
     "jasmine-spec-reporter": "^7.0.0",
