@@ -48,6 +48,6 @@
     "ng-extract-i18n-merge": "^2.7.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.3",
-    "typescript": "~5.4.5"
+    "typescript": "~5.5.0"
   }
 }
