@@ -21,7 +21,7 @@
             "outputPath": "dist/zmcomplex",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
@@ -90,11 +90,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "zmcomplex:build"
+            "buildTarget": "zmcomplex:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "zmcomplex:build:production"
+              "buildTarget": "zmcomplex:build:production"
             }
           }
         },
@@ -113,7 +113,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
