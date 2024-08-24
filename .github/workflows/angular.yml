@@ -25,13 +25,11 @@ jobs:
 
       - name: Install
         run: |
-          cd angular
           npm i
           npm link @angular/cli
 
       - name: Build
         run: |
-          cd angular
           ng build --configuration production --base-href /
           cp -r dist/zmcomplex pages
           ng build --configuration production,en --base-href /
@@ -43,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'angular/pages'
+          path: 'pages'
 
   deploy:
     needs: build

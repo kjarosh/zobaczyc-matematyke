@@ -1,0 +1,30 @@
+@small: ~"screen and (max-width: 799px)";
+@desktop: ~"screen and (min-width: 800px) and (max-width: 1399px)";
+@fulldesktop: ~"screen and (min-width: 1400px)";
+
+@width-small: 100%;
+@width-desktop: 768px;
+@width-fulldesktop: 900px;
+
+@theme-border: darken(white, 15%);
+@theme-quote-border: lighten(#2581b7, 10%);
+@theme-quote-text: lighten(#2581b7, 10%);
+@theme-quote-author: darken(@theme-border, 10%);
+
+@theme-def-border: #cccccc;
+@theme-def-bg: #eeeeee;
+
+@content-margin: 80px;
+
+@color-accent: #0099ff;
+
+.auto-width(){
+	@media @small { width: @width-small; }
+	@media @desktop { width: @width-desktop; }
+	@media @fulldesktop { width: @width-fulldesktop; }
+}
+
+.margin-center(){
+	margin-left: auto;
+	margin-right: auto;
+}
